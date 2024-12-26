@@ -33,7 +33,8 @@ export default function FAQ() {
          variants={containerVariants}
          initial="hidden"
          whileInView="visible"
-         viewport={{ once: true }}>
+         viewport={{ once: true }}
+         id="faqs">
 
       <motion.div 
       className="max-w-3xl mx-auto text-center my-16"
