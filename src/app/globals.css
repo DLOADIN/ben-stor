@@ -1,0 +1,96 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --bencolor:#9324ee;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: 'Inter', sans-serif; 
+  }
+
+  .embla__container {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px; 
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #000000; 
+    border-radius: 12px;
+    border: 3px solid #f1f1f1; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin; 
+    scrollbar-color: #000000 #f1f1f1;
+  }
+
+  html::-webkit-scrollbar {
+    border-radius: 12px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-400px * 20));
+    }
+  }
+
+  @keyframes scroll-reverse {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(400px * 20));
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 120s linear infinite;
+  }
+
+  .animate-scroll-reverse {
+    animation: scroll-reverse 120s linear infinite;
+  }
+
+  .animate-scroll:hover,
+  .animate-scroll-reverse:hover {
+    animation-play-state: paused;
+  }
+
+  .group:hover .group-hover\:text-black {
+    color: black;
+  }
+
+  .group:hover .group-hover\:text-gray-700 {
+    color: #374151;
+  }
+  
