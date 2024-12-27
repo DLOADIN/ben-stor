@@ -76,7 +76,7 @@ export default function VideoHero() {
             playsInline
             onError={handleVideoError}
           >
-            <source src="/main.mp4" type="video/mp4" />
+            <source src="/main.js" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
