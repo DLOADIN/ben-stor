@@ -41,10 +41,11 @@ export default function FAQ() {
       variants={itemVariants}
       >
         <h2 className="text-5xl font-bold mb-6">
-          Don't take our <span className="italic">word</span> for it.
+          The most <span className="italic">asked</span>questions.
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400">
-          Hear what real people have to say about us.
+          We are here to respond any question and give more information < br/>
+          on any inquiry from our customers locally & internatinally. 
         </p>
       </motion.div>
     
