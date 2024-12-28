@@ -7,6 +7,7 @@ import Bswhyus from "@/app/components/layout/Bswhyus"
 import Footer from "@/app/components/layout/BsFooter"
 import Bsheading from "@/app/components/layout/Bsheading"
 import FAQ from "@/app/components/layout/BsFAQs"
+import Projects from "@/app/components/layout/Bsservices"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <HeroSection />
         <Bsheading />
         <VideoHero />
+        <Projects />
         <Bswhyus />
           <FAQ />
         <Footer />
