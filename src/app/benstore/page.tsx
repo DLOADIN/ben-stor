@@ -9,10 +9,6 @@ import Bsheading from "@/app/components/layout/Bsheading"
 import FAQ from "@/app/components/layout/BsFAQs"
 import Projects from "@/app/components/layout/Bsservices"
 
-export const metadata: Metadata = {
-  title: "BEN STORES",
-  description: "The home page of BS BRAND & BEN STORES",
-};
 
 export default function Home() {
   return (
