@@ -10,15 +10,14 @@ import CEOCard from "./components/layout/CeoCard";
 import Contact from "./components/layout/Contact";
 import Footer from "./components/layout/Footer";
 
+export const metadata: Metadata = {
+  title: "BS BRAND",
+  description: "The home page of BS BRAND & BEN STORES",
+};
+
 export default function Home() {
   return (
-    <div
-      style={{
-        backgroundImage: "linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)",
-      }}
-      className="min-h-screen"
-    >
-      
+    <div className="gradient-background min-h-screen">
       <Navbar />
       <main>
         <section id="home" className="min-h-screen">
@@ -41,17 +40,16 @@ export default function Home() {
           <TestimonialsCarousel />
         </section>
 
-        <section  className="min-h-screen">
+        <section className="min-h-screen">
           <CEOCard />
         </section>
 
         <section id="contact" className="min-h-screen">
           <Contact />
-
         </section>
+
         <Footer />
       </main>
-
     </div>
   );
 }
