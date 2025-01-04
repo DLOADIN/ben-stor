@@ -4,7 +4,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "BS BRAND",
-  description: "BEN STORES AND BS BRAND COMBINED TOGETHER",
+  description: "BEN STORES AND BS BRAND",
+  openGraph:{
+    title: "BS BRAND",
+    type:"website",
+    locale:"en_US",
+    siteName:"BSBRAND"
+  },
 };
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode;}>) {
