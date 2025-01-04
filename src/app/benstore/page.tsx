@@ -1,5 +1,4 @@
-"use client"
-
+import { Metadata } from "next";
 import HeroSection from "@/app/components/layout/Bsheader";
 import StarryBackground from "@/app/components/effects/SnowEffect";
 import VideoHero from "@/app/components/layout/BsSection";
@@ -9,6 +8,10 @@ import Bsheading from "@/app/components/layout/Bsheading"
 import FAQ from "@/app/components/layout/BsFAQs"
 import Projects from "@/app/components/layout/Bsservices"
 
+const metadata: Metadata = {
+  title: "BS BRAND",
+  description: "The home page of BS BRAND & BEN STORES",
+};
 
 export default function Home() {
   return (

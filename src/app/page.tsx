@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import Navbar from "./components/layout/Navbar";
 import Header from "./components/layout/Header";
 import About from "./components/layout/About";
@@ -10,7 +9,7 @@ import CEOCard from "./components/layout/CeoCard";
 import Contact from "./components/layout/Contact";
 import Footer from "./components/layout/Footer";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "BS BRAND",
   description: "The home page of BS BRAND & BEN STORES",
 };
