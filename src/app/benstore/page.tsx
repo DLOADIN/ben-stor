@@ -9,7 +9,7 @@ import FAQ from "@/app/components/layout/BsFAQs"
 import Projects from "@/app/components/layout/Bsservices"
 
 const metadata: Metadata = {
-  title: "BS BRAND",
+  title: "BEN STORES",
   description: "The home page of BS BRAND & BEN STORES",
 };
 
