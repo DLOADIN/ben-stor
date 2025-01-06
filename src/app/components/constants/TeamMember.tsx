@@ -1,6 +1,4 @@
-// import React from 'react';
-// import { useState, useEffect } from 'react';
-import  { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 import image1 from '@/PICS/DGT_6785.jpg';
 import image2 from '@/PICS/DGT_6547.jpg';
 import image3 from '@/PICS/DGT_6752.jpg';
@@ -19,16 +17,15 @@ import image17 from '@/PICS/TAKI9680.jpg';
 import image18 from '@/PICS/TAKI9606.jpg';
 import image19 from '@/PICS/TAKI9610.jpg';
 import image20 from '@/PICS/DGT_677.jpg';
-// import Lexington_shirt from '@/PICS/Lexington_shirt.jpg'
 
-interface TeamMember {
+export interface TeamMember {
   name: string;
   role: string;
   image: string | StaticImageData;
   linkedin?: string;
 }
 
-const teamMembers: TeamMember[] = [
+export const teamMembers: TeamMember[] = [
   {
     name: "BS BLACK RW-MADE INSPIRED SHIRT",
     role: "Male",
@@ -119,12 +116,5 @@ const teamMembers: TeamMember[] = [
     role: "Unisex",
     image: image19,  
   },
-  
-  // {
-  //   name: "BS WHITE T-SHIRTS",
-  //   role: "Men",
-  //   image: image16,  
-  // },
 ];
 
-export default teamMembers;
