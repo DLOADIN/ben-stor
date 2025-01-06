@@ -8,11 +8,6 @@ import Image from "next/image";
 import Navbar from "@/app/components/layout/Bsnavbar";
 import Tours from "@/assets/Tours.jpg";
 import Iphone from "@/assets/Iphone.jpg";
-import blackhoodiegirl from "@/PICS/TAKI9589.jpg";
-import beniphones from "@/assets/IMG-20241007-WA0028.jpg";
-import whitehoodiegirl from "@/PICS/TAKI9599.jpg";
-import twogirls from "@/PICS/TAKI9671.jpg";
-import twoguys from "@/PICS/TAKI9651.jpg";
 import TRUCK1 from "@/assets/IMG-20241007-WA0040.jpg";
 import TRUCK2 from "@/assets/IMG-20241007-WA0043.jpg";
 import TRUCK3 from "@/assets/IMG-20241007-WA0015.jpg";
@@ -32,11 +27,6 @@ export default function HeroSection() {
     { src: TRUCK3, alt: "TRUCK3" },
     { src: TRUCK4, alt: "TRUCK4" },
     { src: TRUCK5, alt: "TRUCK5" },
-    { src: beniphones, alt: "blackshirtguy" },
-    { src: whitehoodiegirl, alt: "whitehoodiegirl" },
-    { src: blackhoodiegirl, alt: "blackhoodiegirl" },
-    { src: twogirls, alt: "twogirls" },
-    { src: twoguys, alt: "twoguys" },
     { src: Tours, alt: "Tours" },
     { src: hike, alt:"Hike"},
     { src:laptop, alt:"Laptop"},
