@@ -28,7 +28,7 @@ export default function Projects (){
       variants={itemVariants}
       >
         <h2 className="text-5xl font-bold mb-6">
-          Get To see our<span className="italic">main</span> services
+          Get To see our <span className="italic">main</span> services
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400">
           At Ben-stores we are proud to offer a range of top-notch <br /> 
