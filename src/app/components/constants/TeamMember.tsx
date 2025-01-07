@@ -17,6 +17,9 @@ import image17 from '@/PICS/TAKI9680.jpg';
 import image18 from '@/PICS/TAKI9606.jpg';
 import image19 from '@/PICS/TAKI9610.jpg';
 import image20 from '@/PICS/DGT_677.jpg';
+import image21 from '@/PICS/TAKI9589.jpg';
+import image22 from '@/PICS/TAKI9596.jpg';
+import image23 from '@/PICS/TAKI9599.jpg';
 
 export interface TeamMember {
   name: string;
@@ -115,6 +118,21 @@ export const teamMembers: TeamMember[] = [
     name: "BS WHITE POLO SHIRTS",
     role: "Unisex",
     image: image19,  
+  },
+  {
+    name: "BS WHITE HOODIES",
+    role: "Unisex",	
+    image: image21,
+  },
+  {
+    name: "BS WHITE POLO SHIRTS",
+    role: "Unisex",	
+    image: image23,
+  },
+  {
+    name: "BS BLACK RW-MADE INSPIRED SHIRT",
+    role: "Male",	
+    image: image22,
   },
 ];
 
