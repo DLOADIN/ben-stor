@@ -102,7 +102,7 @@
     }, [])
 
     return (
-      <div className="mt-20 relative w-full h-[calc(100vh-3.5rem)] overflow-hidden">
+      <div className="mt-20 relative w-[1750px] h-[calc(100vh-3.5rem)] overflow-hidden rounded-3xl flex justify-center items-center mx-auto">
         {slides.map((slide, index) => (
           <div
             key={index}
