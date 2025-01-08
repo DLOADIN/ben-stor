@@ -52,31 +52,24 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8 font-bold">
-          {links.map(({ href, label, type }) =>
-            type === "scroll" ? (
-              <button
-                key={href}
-                onClick={() => scrollToSection(href.slice(1))}
-                className={`${
-                  pathname === href ? "text-pink-500" : ""
-                } hover:text-pink-500 transition-all duration-300 cursor-pointer`}
-              >
-                {label}
-              </button>
-            ) : (
-              <Link
-                key={href}
-                href={href}
-                className={`${
-                  pathname === href ? "text-pink-500" : ""
-                } hover:text-pink-500 transition-all duration-300`}
-              >
-                {label}
-              </Link>
-            )
-          )}
+        <nav className="hidden lg:flex justify-center items-center space-x-8 text-center font-bold ml-auto">
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`${
+                pathname === href ? "text-pink-500" : ""
+              } hover:text-pink-500 transform hover:scale-110 transition-all duration-500 cursor-pointer relative group`}
+            >
+              {label}
+              <span
+                className={`absolute bottom-0 left-0 w-full h-0.5 bg-pink-500 transform ${
+                  pathname === href ? "scale-x-100" : "scale-x-0"
+                } transition-transform duration-300 group-hover:scale-x-100`}
+              ></span>
+            </Link>
+          ))}
+
           <div className="flex items-center space-x-4 ml-6">
             <a
               href="https://www.instagram.com/bs_brand_now"
