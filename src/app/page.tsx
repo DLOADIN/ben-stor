@@ -26,8 +26,11 @@ export default function Home() {
       <main>
         <section id="home" className="min-h-screen">
           <Subnavbar />
-          <Header />
         </section>
+
+        <section className="sm:mt-10">
+            <Header />
+          </section>
 
         <section id="about" className="min-h-screen">
           <About />
