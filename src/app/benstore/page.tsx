@@ -7,6 +7,7 @@ import Footer from "@/app/components/layout/BsFooter"
 import Bsheading from "@/app/components/layout/Bsheading"
 import FAQ from "@/app/components/layout/BsFAQs"
 import Projects from "@/app/components/layout/Bsservices"
+import { TravelCarousel } from "../components/layout/Bsproducts";
 
 const metadata: Metadata = {
   title: "BEN STORES",
@@ -27,6 +28,7 @@ export default function Home() {
         <Bsheading />
         <VideoHero />
         <Projects />
+        <TravelCarousel />
         <Bswhyus />
           <FAQ />
         <Footer />

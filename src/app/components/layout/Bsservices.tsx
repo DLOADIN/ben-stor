@@ -28,11 +28,11 @@ export default function Projects (){
       variants={itemVariants}
       >
         <h2 className="text-5xl font-bold mb-6">
-          Get To see our <span className="italic">main</span> services
+          Get To see our <span className="italic">main</span> rented vehicles
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400">
           At Ben-stores we are proud to offer a range of top-notch <br /> 
-          services designed to make your life easier and your experiences unforgettable
+          services. We offer the best car rentals in Rwanda and Just call us we are just a phone call away 
         </p>
       </motion.div>
       <motion.div
@@ -72,7 +72,7 @@ export default function Projects (){
       <motion.img
         src={typeof service.image === 'string' ? service.image : service.image.src}
         alt={service.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}

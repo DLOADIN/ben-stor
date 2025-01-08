@@ -1,9 +1,11 @@
 "use client"
 
-import iphones from "@/assets/IMG-20241007-WA0032.jpg"
-import car from "@/assets/IMG-20241007-WA0019.jpg"
-import fashion from "@/assets/DGT_6771.jpg"
-import OtherTours from "@/assets/OtherTours.jpg"
+import car1 from "@/assets/IMG-20241007-WA0015.jpg"
+import car2 from "@/assets/IMG-20241007-WA0018.jpg"
+import car3 from "@/assets/IMG-20241007-WA0019.jpg"
+import car4 from "@/assets/IMG-20241007-WA0040.jpg"
+import car5 from "@/assets/IMG-20241007-WA0042.jpg"
+import car6 from "@/assets/IMG-20241007-WA0043.jpg"
 import { StaticImageData } from 'next/image';
 
 interface ProjectCardProps {
@@ -14,23 +16,33 @@ interface ProjectCardProps {
 
 export const services: ProjectCardProps[] = [
   {
-    title: "CAR & APARTMENTS RENTALS",
-    description: "Whether you’re visiting Rwanda or exploring new destinations, we provide reliable vehicles and comfortable accommodations tailored to your needs.",
-    image: car
+    title: "HYUNDAI SANTA FE",
+    description: "This isn't just a minivan. The Santa Fe is sleek, spacious, and ready to conquer any Rwandan road, from the bustling city streets to the rugged savannah. Buckle up, buttercup, it's gonna be a ride.",
+    image: car1
   },
   {
-    title: "LATEST FASHION & FOOTWEAR",
-    description: "Shop our premium-quality clothing and first-class shoes to stay stylish wherever you go.",
-    image: fashion,
+    title: "HYUNDAI SONATA",
+    description: "Smooth operator, that's the Sonata. This sedan glides like a dream, perfect for cruising along Lake Kivu or impressing your date with a touch of sophistication. Just don't blame us if you get lost in the scenery.",    
+    image: car2,
   },
   {
-    title: "IPHONES & ACCESSORIES FOR SALE",
-    description: "Capture every moment in stunning detail with the latest iPhones available at competitive prices.",
-    image: iphones,
+    title: "LAND CRUISER",
+    description: "The Land Cruiser: Built to last longer than your ex's grudges. This beast can handle anything Rwanda throws at it – mud, mountains, and maybe even a rogue gorilla. Go ahead, explore the untamed wilderness in style.",
+    image: car3,
   },
   {
-    title: "TRIP ORGANISATION WORLDWIDE",
-    description: "From local adventures to global tours and journeys, let us plan your next trip with care and expertise.",
-    image: OtherTours,
+    title: "TOYOTA PRADO",
+    description: "Need a car that's as rugged as you are? The Prado is your adventure buddy. Conquer those off-road trails and leave the pavement behind. Just remember to pack some snacks – the views might keep you out longer than expected.",
+    image: car4,
+  },
+  {
+    title: "TOYOTA COASTER",
+    description: "Rollin' in style with the Toyota Coaster. This spacious minibus is perfect for group adventures, family reunions, or that epic road trip you've been dreaming of. Just don't forget to bring the party playlist.", 
+    image: car5,
+  },
+  {
+    title: "TOYOTA HIACE",
+    description: "The Toyota Hiace: Work hard, play harder. This reliable workhorse is ready for anything, from transporting your crew to hauling your gear. Just don't expect it to win any beauty contests (unless you're into rugged charm).",
+    image: car6,
   },
 ];

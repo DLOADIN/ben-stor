@@ -16,7 +16,8 @@ export default function Navbar() {
   const links = [
     { href: "/benstore", label: "Ben-Stores", type: "navigate" },
     { href: "../", label: "Home", type: "scroll" },
-    { href: "#services", label: "Services", type: "scroll" },
+    { href: "#services", label: "Cars", type: "scroll" },
+    { href: "#travel", label: "Travels", type: "scroll" },
     { href: "#why-us", label: "Why-us", type: "scroll" },
     { href: "#faqs", label: "FAQs", type: "scroll" },
   ];
