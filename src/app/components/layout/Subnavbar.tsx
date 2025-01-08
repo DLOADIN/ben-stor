@@ -75,7 +75,7 @@ export default function Subnavbar() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="absolute left-20 bottom-10 flex gap-2">
+      <div className="absolute left-20 bottom-10 hidden md:flex gap-2">
         <CarouselPrevious className="relative" />
         <CarouselNext className="relative" />
       </div>
