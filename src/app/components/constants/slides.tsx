@@ -17,7 +17,7 @@ interface SlideType {
 const slides: SlideType[] = [
   {
     title: "Welcome to BS Brand",
-    subtitle: "The #1 platform where faith meets fashion, weaving garments that whisper hope and inspire the soul, a Jesus-centered haven where beauty knows no bounds.",
+    subtitle: "The #1 platform where faith meets fashion, We are the first & only brand in Rwanda that embodies the christ-centeredness in our vision and mission.",
     image: image1,
     icons: [
       { icon: <Clock className="h-6 w-6 text-white" />, position: "top-1/4 left-1/4" },
@@ -28,7 +28,7 @@ const slides: SlideType[] = [
   },
   {
     title: "We ship anywhere in the world with quality, protection and supervision",
-    subtitle: "With precision and care, our expert team navigates global logistics with the latest technology, ensuring quality and protection every step of the way.",
+    subtitle: "With precision and care, our expert team navigates global logistics in partnership with DHL and utilize the latest technology, ensuring quality and protection every step of the way.",
     image: image2,
     icons: [
       { icon: <Shield className="h-6 w-6 text-white" />, position: "top-1/4 right-1/4" },
@@ -38,7 +38,7 @@ const slides: SlideType[] = [
   },
   {
     title: "Just get into contact with us we shall deliver beyond your expectations",
-    subtitle: "Attract, screen, and manage the best candidates to grow your team — one great hire at a time.",
+    subtitle: "We respond very timely and fast, We prioritize our client's satisafaction for clients are Kings & Queens",
     image: image3,
     icons: [
       { icon: <Briefcase className="h-6 w-6 text-white" />, position: "top-1/3 left-1/4" },

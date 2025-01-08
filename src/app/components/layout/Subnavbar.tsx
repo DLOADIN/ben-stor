@@ -34,7 +34,7 @@ export default function Subnavbar() {
 
   useEffect(() => {
     if (!api) return
-    intervalRef.current = setInterval(() => api.scrollNext(), 5000)
+    intervalRef.current = setInterval(() => api.scrollNext(), 10000)
     return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
   }, [api])
 
@@ -42,7 +42,7 @@ export default function Subnavbar() {
     <Carousel
       setApi={setApi}
       opts={{ align: "start", loop: true }}
-      className="w-full h-[40rem] max-w-screen-xl mx-auto relative mt-10"
+      className="w-full h-[40rem] max-w-screen-xl mx-auto relative pt-16"
       onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current) }}
       onMouseLeave={() => { intervalRef.current = setInterval(() => api?.scrollNext(), 3000) }}
     >
