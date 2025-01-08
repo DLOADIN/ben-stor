@@ -37,7 +37,6 @@ export default function Bswhyus() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}>
-
       <motion.div className="max-w-3xl mx-auto text-center mb-4"
         variants={itemVariants}
       >

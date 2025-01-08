@@ -87,7 +87,7 @@ export default function TestimonialsCarousel() {
         </p>
       </motion.div>
 
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl text-black">
         <div className="marquee-container group">
         <Marquee
           className="[--duration:100s]"
@@ -111,7 +111,7 @@ export default function TestimonialsCarousel() {
             }}
           >
             {secondRow.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card">
+              <div key={testimonial.id} className="testimonial-card text-black">
                 <TestimonialCard testimonial={testimonial} />
               </div>
             ))}
