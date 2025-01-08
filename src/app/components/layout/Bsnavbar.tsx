@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md text-black">
       <div className="flex h-20 items-center px-4 sm:px-8 md:px-12 lg:px-16">
       <div className="flex items-center justify-between space-x-2">
         <Link href="/benstore" className="flex items-center ">
@@ -34,7 +34,7 @@ export default function Navbar() {
               priority
               className="dark:invert"
             />
-            <p className="font-bold text-base  text-black px-4 py-2 rounded-[25px] bg-gray-200 relative hover:text-white overflow-hidden group">
+            <p className="font-bold text-base text-black px-4 py-2 rounded-[25px] bg-gray-200 relative hover:text-white overflow-hidden group">
               <span className="relative z-10">BEN - STORES</span>
               <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-pink-500 transition-transform duration-[600ms] transform scale-x-0 origin-left group-hover:scale-x-100"></span>
             </p>

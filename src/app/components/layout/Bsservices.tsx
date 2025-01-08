@@ -16,7 +16,7 @@ export default function Projects (){
   }
 
   return (
-    <div className="py-20 px-4 md:px-8" id="services">
+    <div className="py-20 px-4 md:px-8 text-black" id="services">
       <motion.div 
         className="max-w-7xl mx-auto space-y-12"
         initial={{ opacity: 0 }}

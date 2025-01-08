@@ -32,7 +32,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md text-black">
       <div className="flex h-20 items-center justify-between px-6 sm:px-12 md:px-16 lg:px-20">
         {/* Logo Section */}
         <div className="flex items-center space-x-4">

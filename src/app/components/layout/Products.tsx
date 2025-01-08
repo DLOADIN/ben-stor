@@ -63,7 +63,7 @@ const handleItemClick = (item: TeamMember) => {
   };
 
   return (
-    <div className="w-full h-screen overflow-hidden relative">
+    <div className="w-full h-screen overflow-hidden relative text-black">
       <motion.div
         variants={{
           hidden: { opacity: 0 },

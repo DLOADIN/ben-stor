@@ -90,7 +90,7 @@ const itemVariants = {
 
   return(
     <motion.div 
-        className="container mx-auto p-4 space-y-6"
+        className="container mx-auto p-4 space-y-6 text-black"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

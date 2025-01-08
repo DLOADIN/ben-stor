@@ -69,7 +69,7 @@ export default function TestimonialsCarousel() {
 
   return (
     <motion.div 
-         className="w-full overflow-hidden"
+         className="w-full overflow-hidden text-black"
          variants={containerVariants}
          initial="hidden"
          whileInView="visible"

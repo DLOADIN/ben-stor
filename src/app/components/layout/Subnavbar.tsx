@@ -42,7 +42,7 @@ export default function Subnavbar() {
     <Carousel
       setApi={setApi}
       opts={{ align: "start", loop: true }}
-      className="w-full h-[40rem] max-w-screen-xl mx-auto relative pt-16"
+      className="w-full h-[40rem] max-w-screen-xl mx-auto relative pt-16 text-black"
       onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current) }}
       onMouseLeave={() => { intervalRef.current = setInterval(() => api?.scrollNext(), 3000) }}
     >

@@ -15,7 +15,7 @@ export default function Bsheading() {
 
 return(
   <div 
-  className="container mx-auto px-4">
+  className="container mx-auto px-4 text-black">
   <motion.div 
             className="mx-auto my-10 items-center justify-end max-w-3xl text-center"
             variants={itemVariants}

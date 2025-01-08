@@ -29,7 +29,7 @@ export default function FAQ() {
 
   return (
     <motion.div 
-        className="w-full max-w-3xl mx-auto p-4 space-y-2 mb-10"
+        className="w-full max-w-3xl mx-auto p-4 space-y-2 mb-10 text-black"
          variants={containerVariants}
          initial="hidden"
          whileInView="visible"

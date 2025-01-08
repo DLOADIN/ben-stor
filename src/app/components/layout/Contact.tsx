@@ -105,7 +105,7 @@ export default function Contact() {
   }
 
   return (
-    <motion.div className="container mx-auto px-4"
+    <motion.div className="container mx-auto px-4 text-black"
     variants={containerVariants}
     initial="hidden"
     whileInView="visible"

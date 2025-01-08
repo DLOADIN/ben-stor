@@ -30,7 +30,7 @@ export default function Bswhyus() {
   return(
   <section className="py-24" id="why-us">
      <motion.div
-      className="container mx-auto px-4"
+      className="container mx-auto px-4 text-black"
       variants={containerVariants}
       whileInView="visible"
       viewport={{ once: true }}

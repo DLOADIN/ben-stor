@@ -56,7 +56,7 @@ export default function VideoHero() {
 
   return (
     <motion.div 
-      className="container mx-auto px-4 relative w-screen h-screen overflow-hidden rounded-3xl" 
+      className="container mx-auto px-4 relative w-screen h-screen overflow-hidden rounded-3xl text-black" 
       id="video"
       variants={containerVariants}
       initial="hidden"
