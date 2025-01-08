@@ -76,8 +76,8 @@ export default function Subnavbar() {
         ))}
       </CarouselContent>
       <div className="absolute left-20 bottom-10 hidden md:flex gap-2">
-        <CarouselPrevious className="relative" />
-        <CarouselNext className="relative" />
+        <CarouselPrevious className="relative bg-orange-50" />
+        <CarouselNext className="relative bg-orange-50" />
       </div>
     </Carousel>
   )
