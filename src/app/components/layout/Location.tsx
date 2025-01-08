@@ -104,7 +104,7 @@ const itemVariants = {
           We ship our products <span className="italic bold">all around </span> the globe.
          </h2>
          <p className="text-gray-400 text-xl">
-          We work hand in hand with the Fastest Aerial Transportation Company in the World<br/>
+          We work hand in hand with the Fastest Aerial Transportation Company in the World. 
           <span className="text-red-700 bg-yellow-500 italic text-3xl font-extrabold mx-1 rounded-md px-1"> DHL</span>
           Orders are received by customers from 1 - 2 days anywhere in the world.
           </p>

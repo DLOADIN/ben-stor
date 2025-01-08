@@ -19,14 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          backgroundImage: "linear-gradient(to top, #dfe9f3 0%, white 100%)",
-          backgroundColor: "black",
-          color: "black",
-        }}
-        className="antialiased"
-      >
+      <body className="antialiased">
         {children}
       </body>
     </html>

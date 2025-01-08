@@ -8,6 +8,7 @@ import TestimonialsCarousel from "./components/layout/Testimonials";
 import CEOCard from "./components/layout/CeoCard";
 import Contact from "./components/layout/Contact";
 import Footer from "./components/layout/Footer";
+import Subnavbar from "./components/layout/Subnavbar";
 
 const metadata: Metadata = {
   title: "BS BRAND",
@@ -16,10 +17,15 @@ const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="gradient-background min-h-screen">
+    <div 
+    style={{
+      backgroundImage: "linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)",
+    }}
+    >
       <Navbar />
       <main>
         <section id="home" className="min-h-screen">
+          <Subnavbar />
           <Header />
         </section>
 
