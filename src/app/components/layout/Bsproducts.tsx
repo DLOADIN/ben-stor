@@ -22,7 +22,7 @@ export default function TravelCarousel() {
     setCurrentIndex((prev) => (prev - 1 + destinations.length) % destinations.length)
   }
 
-  // Auto advance every 5 seconds
+  
   useEffect(() => {
     const timer = setInterval(next, 5000)
     return () => clearInterval(timer)
@@ -32,9 +32,40 @@ export default function TravelCarousel() {
     setSelectedImageIndex(0)
   }, [selectedDestination])
 
+  const itemVariants = {
+    hidden: {
+      y: 20,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+    whileInView: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+  
+
   return (
-    <>
-      <div className="relative h-[600px] w-full overflow-hidden rounded-xl" id="travel">
+    <div id="travel">
+      <motion.div 
+      className="max-w-3xl mx-auto text-center my-16"
+      variants={itemVariants}
+      >
+        <h2 className="text-5xl font-bold mb-6">
+          Get To Travel <span className="italic">with</span> us
+        </h2>
+        <p className="text-xl text-gray-600 dark:text-gray-400">
+          At Ben-stores we are proud to offer our clients <br /> 
+          the most unforgettable travel & tours experiences in Rwanda.
+        </p>
+      </motion.div>
+      <div className="relative h-[600px] w-full overflow-hidden rounded-xl">
         <AnimatePresence initial={false} custom={currentIndex}>
           <motion.div
             key={currentIndex}
@@ -154,7 +185,7 @@ export default function TravelCarousel() {
           )}
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   )
 }
 
