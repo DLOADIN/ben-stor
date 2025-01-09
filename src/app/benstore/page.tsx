@@ -8,6 +8,7 @@ import Bsheading from "@/app/components/layout/Bsheading"
 import FAQ from "@/app/components/layout/BsFAQs"
 import Projects from "@/app/components/layout/Bsservices"
 import TravelCarousel from "@/app/components/layout/Bsproducts"
+import Apartments from "@/app/components/layout/Bsapartments"
 
 const metadata: Metadata = {
   title: "BEN STORES",
@@ -25,9 +26,10 @@ export default function Home() {
       <StarryBackground />
       <div className="relative z-10">
         <HeroSection />
+        <Projects />
+        <Apartments/>
         <Bsheading />
         <VideoHero />
-        <Projects />
         <TravelCarousel />
         <Bswhyus />
           <FAQ />

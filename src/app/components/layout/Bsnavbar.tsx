@@ -17,6 +17,7 @@ export default function Navbar() {
     { href: "/benstore", label: "Ben-Stores", type: "navigate" },
     { href: "../", label: "Home", type: "scroll" },
     { href: "#services", label: "Cars", type: "scroll" },
+    { href: "#apartments", label: "Apartments", type: "scroll" },
     { href: "#travel", label: "Travel", type: "scroll" },
     { href: "#why-us", label: "Why-us", type: "scroll" },
     { href: "#faqs", label: "FAQs", type: "scroll" },

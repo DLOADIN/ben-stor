@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { services } from "@/app/components/constants/projects"
+import { apartments } from "@/app/components/constants/apartments"
 
-export default function Projects (){
+export default function Apartments (){
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -16,7 +16,7 @@ export default function Projects (){
   }
 
   return (
-    <div className="py-20 px-4 md:px-8 text-black" id="services">
+    <div className="py-20 px-4 md:px-8 text-black" id="apartments">
       <motion.div 
         className="max-w-7xl mx-auto space-y-12"
         initial={{ opacity: 0 }}
@@ -28,11 +28,11 @@ export default function Projects (){
       variants={itemVariants}
       >
         <h2 className="text-5xl font-bold mb-6">
-          Get to <span className="italic">rent</span> the best cars in Town
+          You can even <span className="italic">rent</span> the best Apartments in Rwanda
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400">
-          At Ben-stores we offer a wide range of <br /> 
-          cars and their accessories for a seamless rental experience.
+          With Ben-stores we offer a variety of <br /> 
+          amazing & luxurious apartments and many more.
         </p>
       </motion.div>
       <motion.div
@@ -41,7 +41,7 @@ export default function Projects (){
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-     {services.map((service, index) => (
+     {apartments.map((apartment, index) => (
   <div className="grid md:grid-cols-2 gap-8 items-center py-10" key={index}>
     <div className={`${index % 2 === 0 ? 'order-2 md:order-1' : 'order-2 md:order-2'}`}>
       <motion.h3 
@@ -50,7 +50,7 @@ export default function Projects (){
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
       >
-        {service.title}
+        {apartment.title}
       </motion.h3>
       <motion.p 
         className="text-gray-400"
@@ -58,7 +58,7 @@ export default function Projects (){
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3 }}
       >
-        {service.description}
+        {apartment.description}
       </motion.p>
       <motion.div
         className="mt-6"
@@ -70,8 +70,8 @@ export default function Projects (){
     </div>
     <div className={`${index % 2 === 0 ? 'order-1 md:order-2' : 'order-1 md:order-1'} overflow-hidden rounded-lg w-full h-full`}>
       <motion.img
-        src={typeof service.image === 'string' ? service.image : service.image.src}
-        alt={service.title}
+        src={typeof apartment.image === 'string' ? apartment.image : apartment.image.src}
+        alt={apartment.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}

@@ -58,7 +58,7 @@ export default function TravelCarousel() {
       variants={itemVariants}
       >
         <h2 className="text-5xl font-bold mb-6">
-          Get To Travel <span className="italic">with</span> us
+          Get To Travel<span className="italic">with</span> us
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400">
           At Ben-stores we are proud to offer our clients <br /> 
