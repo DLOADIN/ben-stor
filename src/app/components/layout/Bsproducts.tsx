@@ -8,7 +8,7 @@ import { Dialog, DialogContent } from "@/app/components/ui/dialog"
 import { destinations, type Destination } from "../../lib/data"
 import Image from "next/image"
 
-export function TravelCarousel() {
+export default function TravelCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null)
   const [dialogOpen, setDialogOpen] = useState(false)
