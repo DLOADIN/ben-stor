@@ -52,7 +52,7 @@ export default function TravelCarousel() {
   
 
   return (
-    <div id="travel">
+    <div id="travel" className="text-black">
       <motion.div 
       className="max-w-3xl mx-auto text-center my-16"
       variants={itemVariants}
