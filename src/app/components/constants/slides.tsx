@@ -1,7 +1,8 @@
-import { Compass, ShoppingCart, Briefcase, Clock, Globe, Shield, Tag, Truck, Cross } from 'lucide-react'
+import { Compass, ShoppingCart, Briefcase, Clock, Globe, Shield, Tag, Truck, Cross, MapPin, ShoppingBag, Gift } from 'lucide-react'
 import image1 from '@/PICS/bs_brandnow.jpg'
 import image2 from '@/PICS/TAKI9680.jpg';
 import image3 from '@/PICS/DGT_6752.jpg'
+import image4 from '@/PICS/DGT_6785.jpg'
 
 
 interface SlideType {
@@ -45,7 +46,18 @@ const slides: SlideType[] = [
       { icon: <ShoppingCart className="h-6 w-6 text-white" />, position: "bottom-1/2 right-1/3" },
       { icon: <Globe className="h-6 w-6 text-white" />, position: "bottom-1/3 right-1/4" },
     ]
-  }
+  },
+  {
+    title: "Explore the World with BS Brand",
+    subtitle: "With our parent company Ben-Stores, You can get anything & anywhere you want from anywhere in the world.",
+    image: image4,
+    icons: [
+      { icon: <Compass className="h-6 w-6 text-white" />, position: "top-1/3 left-1/4" },
+      { icon: <MapPin className="h-6 w-6 text-white" />, position: "bottom-1/3 right-1/4" },
+      { icon: <ShoppingBag className="h-6 w-6 text-white" />, position: "top-2/3 left-1/4" },
+      { icon: <Gift className="h-6 w-6 text-white" />, position: "bottom-1/2 right-1/4" },
+    ]
+  },
 ]
 
 export {slides, type SlideType}
