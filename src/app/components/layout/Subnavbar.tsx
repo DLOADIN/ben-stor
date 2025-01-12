@@ -54,7 +54,7 @@ export default function Subnavbar() {
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight">{slide.title}</h1>
                 <p className="text-lg text-muted-foreground">{slide.subtitle}</p>
               </div>
-              <div className="relative h-[500px]">
+              <div className="relative h-[550px]">
                 <Image
                   src={slide.image}
                   alt="Feature illustration"

@@ -1,5 +1,5 @@
 import { Compass, ShoppingCart, Briefcase, Clock, Globe, Shield, Tag, Truck, Cross } from 'lucide-react'
-import image1 from '@/PICS/DGT_6785.jpg'
+import image1 from '@/PICS/bs_brandnow.jpg'
 import image2 from '@/PICS/TAKI9680.jpg';
 import image3 from '@/PICS/DGT_6752.jpg'
 
