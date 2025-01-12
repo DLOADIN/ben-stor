@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
-import airwatch from '@/assets/Accessories/371ea1ff-b46d-4242-9950-a45bd2ec5f7b.jpeg'
+import airwatch from '@/assets/Accessories/Refurbished Apple Watch Series 6 Gps, 40mm Space Gray Aluminum Case with Black Sport Band - Regular, Adult Unisex, Size_40 mm.jpeg'
 import airpods from '@/assets/Accessories/83563cd0-42f8-461a-a834-25a850a1130a.jpeg'
 import Magsafe from "@/assets/Accessories/Apple MagSafe Charger (2m).jpeg"
 import StudioDisplay from '@/assets/Accessories/Studio Display - Nano-texture glass - Tilt- and height-adjustable stand.jpeg'
-import Macbook from '@/assets/Accessories/Buy 14-inch MacBook Pro.jpeg'
+import Macbook from '@/assets/Accessories/2022 Apple MacBook Pro .jpeg'
 import airtag from '@/assets/Accessories/Apple Other _ Apple Airtag _ Color_ Silver_White _ Size_ Os.jpeg'
 import Magickeyboard from '@/assets/Accessories/Magic Keyboard with Touch ID for Mac models with Apple silicon — US English.jpeg'
-import ipad from '@/assets/Accessories/Apple iPad Pro 13-Inch M4 chip with Wi-Fi + Cellular - 1TB in Silver (Pre-Sale) _ Nebraska Furniture Mart.jpeg'
+import ipad from '@/assets/Accessories/Apple iPad Pro 11.jpeg'
 
 interface Accessory {
   name: string;
@@ -89,12 +89,12 @@ export default function AccessoriesCarousel() {
 
   return (
     <div 
-      className="w-full py-16 overflow-hidden"
+      className="w-full py-16 overflow-hidden text-black"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="container mx-auto mb-8">
-        <h2 className="text-4xl font-bold text-white mb-4">Essential Accessories</h2>
+        <h2 className="text-4xl font-bold text-black mb-4">Essential Accessories</h2>
         <p className="text-gray-400">Enhance your Apple experience with these premium accessories</p>
       </div>
       
