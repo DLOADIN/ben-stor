@@ -10,6 +10,7 @@ import Projects from "@/app/components/layout/Bsservices"
 import TravelCarousel from "@/app/components/layout/Bsproducts"
 import Apartments from "@/app/components/layout/Bsapartments"
 import IPhoneShowcase from "@/app/components/layout/Bsiphones"
+import Accessories from "@/app/components/layout/Bsaccessorries"
 
 const metadata: Metadata = {
   title: "BEN STORES",
@@ -33,6 +34,7 @@ export default function Home() {
         <VideoHero />
         <TravelCarousel />
         <IPhoneShowcase />
+        <Accessories />
         <Bswhyus />
           <FAQ />
         <Footer />
