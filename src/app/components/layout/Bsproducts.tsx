@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/app/components/ui/button"
 import { Dialog, DialogContent } from "@/app/components/ui/dialog"
-import { destinations, type Destination } from "../../lib/data"
+import { destinations, type Destination } from "@/app/lib/data"
 import Image from "next/image"
 
 export default function TravelCarousel() {

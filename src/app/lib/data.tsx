@@ -101,7 +101,7 @@ export const destinations: Destination[] = [
     id: 4,
     name: "Museums",
     vacations: 7,
-    image: image21,
+    image: image25,
     description:
       "Delve into the rich history and culture of Rwanda by visiting its fascinating museums. Learn about the country's past and present.",
     relatedImages: [
