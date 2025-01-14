@@ -74,12 +74,10 @@ import editionimg51 from '@/assets/EDITION3/DSC09798.jpg';
 import editionimg52 from '@/assets/EDITION3/DSC09831.jpg';
 import editionimg53 from '@/assets/EDITION3/DSC09836.jpg';
 import editionimg54 from '@/assets/EDITION3/DSC09840.jpg';
-import editionimg55 from '@/assets/EDITION3/DSC09840(1).jpg';
 import editionimg56 from '@/assets/EDITION3/DSC09843.jpg';
 import editionimg57 from '@/assets/EDITION3/DSC09845.jpg';
 import editionimg58 from '@/assets/EDITION3/DSC09846.jpg';
 import editionimg59 from '@/assets/EDITION3/DSC09850.jpg';
-import editionimg60 from '@/assets/EDITION3/DSC09851.jpg';
 import editionimg61 from '@/assets/EDITION3/DSC09859.jpg';
 import editionimg62 from '@/assets/EDITION3/DSC09861.jpg';
 import editionimg63 from '@/assets/EDITION3/DSC09891.jpg';
@@ -128,10 +126,6 @@ export const teamMembers: TeamMember[] = [
     variants: [
       {
         role: "Unisex",
-        image: image21
-      },
-      {
-        role: "Unisex",
         image: image25
       }
     ]
@@ -166,6 +160,21 @@ export const teamMembers: TeamMember[] = [
       }
     ]
   },
+  {
+    name: "BS STREET SHIRTS",
+    role: "Male",
+    image: editionimg61,
+    variants:[
+      {
+        role: "Male",
+        image: editionimg61,
+      },
+      {
+        role: "Male",
+        image: editionimg62
+      },
+    ]},
+
   {
     name: "BS PETITE T-SHIRTS",
     role: "Female",
@@ -270,8 +279,12 @@ export const teamMembers: TeamMember[] = [
         image: editionimg34
       },
       {
+        role: "Unisex",
+        image: editionimg64
+      },
+      {
         role: "Male",
-        image: editionimg35
+        image: editionimg65
       },
       {
         role: "Male",
@@ -311,7 +324,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "BS SUITS",
     role: "Male",
-    image: editionimg32,
+    image: editionimg52,
     variants: [
       {
         role: "Male",
@@ -324,10 +337,6 @@ export const teamMembers: TeamMember[] = [
       {
         role: "Male",
         image: editionimg54
-      },
-      {
-        role: "Male",
-        image: editionimg55
       },
       {
         role: "Male",
@@ -366,6 +375,14 @@ export const teamMembers: TeamMember[] = [
       {
         role: "Unisex",
         image: editionimg36
+      },
+      {
+        role: "Unisex",
+        image: editionimg63
+      },
+      {
+        role: "Unisex",
+        image: editionimg59
       },
       {
         role: "Unisex",
@@ -488,7 +505,11 @@ export const teamMembers: TeamMember[] = [
       {
       role: "Unisex",
       image: image5
-    }
+    },
+    {
+      role: "Unisex",
+      image: image21
+    },
     ]
   },
   {
