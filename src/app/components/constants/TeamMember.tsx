@@ -462,7 +462,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "BS BLACK RW-MADE INSPIRED SHIRT",
     role: "Male",
-    image: image17,
+    image: editionimg42,
     variants: [
       {
         role: "Male",
@@ -474,7 +474,7 @@ export const teamMembers: TeamMember[] = [
       },
       {
         role: "Male",
-        image: editionimg42
+        image: image17
       },
       {
         role: "Male",
