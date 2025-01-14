@@ -1,8 +1,9 @@
-import { Compass, ShoppingCart, Briefcase, Clock, Globe, Shield, Tag, Truck, Cross, MapPin, ShoppingBag, Gift } from 'lucide-react'
+import { Compass, ShoppingCart, Briefcase, Clock, Globe, Shield, Tag, Truck, Cross, MapPin, ShoppingBag, Gift, Heart, Star, Map, Bell, ThumbsUp, Calendar } from 'lucide-react'
 import image1 from '@/PICS/bs_brandnow.jpg'
-import image2 from '@/PICS/TAKI9680.jpg';
-import image3 from '@/PICS/DGT_6752.jpg'
+import image2 from '@/PICS/TAKI9680.jpg'
+import image3 from '@/PICS/TAKI9642.jpg'
 import image4 from '@/PICS/DGT_6785.jpg'
+import image5 from '@/PICS/DGT_6752.jpg'
 
 
 interface SlideType {
@@ -44,6 +45,7 @@ const slides: SlideType[] = [
     icons: [
       { icon: <Briefcase className="h-6 w-6 text-white" />, position: "top-1/3 left-1/4" },
       { icon: <ShoppingCart className="h-6 w-6 text-white" />, position: "bottom-1/2 right-1/3" },
+      { icon: <Map className="h-6 w-6 text-white" />, position: "top-2/4 left-1/4" },
       { icon: <Globe className="h-6 w-6 text-white" />, position: "bottom-1/3 right-1/4" },
     ]
   },
@@ -56,6 +58,19 @@ const slides: SlideType[] = [
       { icon: <MapPin className="h-6 w-6 text-white" />, position: "bottom-1/3 right-1/4" },
       { icon: <ShoppingBag className="h-6 w-6 text-white" />, position: "top-2/3 left-1/4" },
       { icon: <Gift className="h-6 w-6 text-white" />, position: "bottom-1/2 right-1/4" },
+    ]
+  },
+  {
+    title: "Experience the Best of BS Brand",
+    subtitle: "With BS Brand you get to encounter the latest fashion trends, exclusive deals, and exceptional customer service.",
+    image: image5,
+    icons: [
+      { icon: <Heart className="h-6 w-6 text-white" />, position: "top-1/4 left-1/4" },
+      { icon: <Star className="h-6 w-6 text-white" />, position: "bottom-1/3 right-1/4" },
+      { icon: <Bell className="h-6 w-6 text-white" />, position: "bottom-1/2 right-1/4" },
+      { icon: <ThumbsUp className="h-6 w-6 text-white" />, position: "top-1/2 left-1/4" },
+      { icon: <Clock className="h-6 w-6 text-white" />, position: "top-2/3 left-1/4" },
+      { icon: <Calendar className="h-6 w-6 text-white" />, position: "bottom-1/2 right-1/4" },
     ]
   },
 ]

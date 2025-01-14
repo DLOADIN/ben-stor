@@ -37,22 +37,34 @@ export default function EnhancedCarousel() {
     stopOnInteraction: false,
     stopOnMouseEnter: true,
   })]);
-const findRelatedItems = (item: TeamMember) => {
-  const keywords = item.name.toLowerCase().split(' ');
-  return teamMembers.filter(member => {
-    const memberKeywords = member.name.toLowerCase().split(' ');
-    return (
-      member !== item &&
-      memberKeywords.some(keyword => keywords.includes(keyword))
-    );
-  });
-};
 
-const handleItemClick = (item: TeamMember) => {
-  setSelectedItem(item);
-  setRelatedItems(findRelatedItems(item));
-  setShowModal(true);
-};
+  const findRelatedItems = (item: TeamMember) => {
+    // Find items with similar names or same category
+    const itemKeywords = item.name.toLowerCase().split(' ');
+    return teamMembers.filter(member => {
+      const memberKeywords = member.name.toLowerCase().split(' ');
+      return member !== item && 
+        (memberKeywords.some(keyword => itemKeywords.includes(keyword)) ||
+         member.name === item.name);
+    });
+  };
+
+  const getVariantsForDisplay = (item: TeamMember) => {
+    if (!item.variants) return [];
+    return item.variants.map(variant => ({
+      ...item,
+      image: variant.image,
+      role: variant.role
+    }));
+  };
+
+  const handleItemClick = (item: TeamMember) => {
+    setSelectedItem(item);
+    const related = findRelatedItems(item);
+    const variants = getVariantsForDisplay(item);
+    setRelatedItems([...variants, ...related]);
+    setShowModal(true);
+  };
 
   const handleMouseEnter = (index: number) => {
     if (isMobile) setExpandedIndex(index);
@@ -104,6 +116,11 @@ const handleItemClick = (item: TeamMember) => {
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                       <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                       <p className="text-sm text-gray-300">{member.role}</p>
+                      {member.variants && (
+                        <p className="text-xs text-gray-400 mt-1">
+                          {member.variants.length + 1} variants available
+                        </p>
+                      )}
                     </div>
                   </div>
                 </Card>
@@ -114,49 +131,48 @@ const handleItemClick = (item: TeamMember) => {
       </motion.div>
 
       <Dialog open={showModal} onOpenChange={(open) => setShowModal(open)}>
-  <DialogContent className="max-w-7xl h-[90vh] overflow-y-auto">
-    {selectedItem && (
-      <div className="space-y-8">
-        <div className="relative h-[50vh]">
-          <Image
-            src={selectedItem.image}
-            alt={selectedItem.name}
-            fill
-            className="object-cover rounded-lg"
-          />
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-            <h2 className="text-2xl font-bold text-white">{selectedItem.name}</h2>
-            <p className="text-gray-200">{selectedItem.role}</p>
-          </div>
-        </div>
-        
-        <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Related Items</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {relatedItems.map((item, index) => (
-              <div key={index} className="relative h-64 group cursor-pointer"
-                  onClick={() => handleItemClick(item)}>
+        <DialogContent className="max-w-7xl h-[90vh] overflow-y-auto">
+          {selectedItem && (
+            <div className="space-y-8">
+              <div className="relative h-[50vh]">
                 <Image
-                  src={item.image}
-                  alt={item.name}
+                  src={selectedItem.image}
+                  alt={selectedItem.name}
                   fill
-                  className="object-cover rounded-lg transition-transform 
-                    duration-300 group-hover:scale-105"
+                  className="object-cover rounded-lg"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <h4 className="text-sm font-semibold">{item.name}</h4>
-                  <p className="text-xs text-gray-300">{item.role}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h2 className="text-2xl font-bold text-white">{selectedItem.name}</h2>
+                  <p className="text-gray-200">{selectedItem.role}</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    )}
-  </DialogContent>
-</Dialog>
+
+              {selectedItem.variants && (
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Get To See More</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    {selectedItem.variants.map((variant, index) => (
+                      <div key={`variant-${index}`} className="relative h-64 group">
+                        <Image
+                          src={variant.image}
+                          alt={`${selectedItem.name} Variant ${index + 1}`}
+                          fill
+                          className="object-cover rounded-lg transition-transform 
+                            duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                          <p className="text-sm">{variant.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
-

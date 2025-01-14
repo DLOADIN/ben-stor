@@ -25,114 +25,121 @@ export interface TeamMember {
   name: string;
   role: string;
   image: string | StaticImageData;
-  linkedin?: string;
+  variants?: Array<{
+    role: string;
+    image: string | StaticImageData;
+  }>;
 }
 
 export const teamMembers: TeamMember[] = [
   {
+    name: "BS BLACK HOODIES",
+    role: "Unisex",
+    image: image2,
+    variants: [
+      {
+        role: "Unisex",
+        image: image3
+      },
+      {
+        role: "Unisex",
+        image: image10
+      }
+    ]
+  },
+  {
+    name: "BS WHITE HOODIES",
+    role: "Unisex",
+    image: image16,
+    variants: [
+      {
+        role: "Unisex",
+        image: image21
+      }
+    ]
+  },
+  {
+    name: "BS WHITE POLO SHIRTS",
+    role: "Unisex",
+    image: image9,
+    variants: [
+      {
+        role: "Unisex",
+        image: image19
+      },
+      {
+        role: "Unisex",
+        image: image23
+      },
+      {
+        role: "Unisex",
+        image: image15
+      }
+    ]
+  },
+  {
+    name: "BS OVERSIZED STREET SHIRTS",
+    role: "Unisex",
+    image: image4,
+    variants: [
+      {
+        role: "Unisex",
+        image: image7
+      }
+    ]
+  },
+  {
+    name: "BS SHORT SLEEVES U NECK",
+    role: "Women",
+    image: image8,
+    variants: [
+      {
+        role: "Women",
+        image: image11
+      }
+    ]
+  },
+  {
     name: "BS BLACK RW-MADE INSPIRED SHIRT",
     role: "Male",
-    image: image17,  
+    image: image17,
+    variants: [
+      {
+        role: "Male",
+        image: image22
+      }
+    ]
   },
   {
     name: "BS TURTLENECK/ ROLL NECK",
     role: "Female",
-    image: image18,  
+    image: image18,
+    variants: [
+      {
+        role: "Female",
+        image: image20
+      }
+    ]
   },
   {
-    name: "BS TURTLENECK/ ROLL NECK + BIBLE QUOTES",
-    role: "Female",
-    image: image20,  
-  },
-  {
-    name: "BS BLACK SWEATSHIRTS/ BLACK PULLOVERS",
+    name: "BS SWEATSHIRTS/ PULLOVERS",
     role: "Unisex",
-    image: image1,  
-  },
-  {
-    name: "BS BLACK HOODIES",
-    role: "Unisex",
-    image: image2,  
-  },
-  {
-    name: "BS BLACK HOODIES",
-    role: "Unisex",
-    image: image3,  
-  },
-  {
-    name: "BS OVERSIZED STREET SHIRTS",
-    role: "Unisex",
-    image: image4,  
-  },
-  {
-    name: "BS WHITE SWEATSHIRTS / WHITE PULLOVERS",
-    role: "Unisex",
-    image: image5,  
+    image: image1,
+    variants: [
+      {
+      role: "Unisex",
+      image: image5
+    }
+    ]
   },
   {
     name: "BS T-SHIRTS",
     role: "Unisex",
-    image: image6,  
-  },
-  {
-    name: "BS OVERSIZED STREET SHIRTS",
-    role: "Unisex",
-    image: image7,  
-  },
-  {
-    name: "BS SHORT SLEEVES U NECK",
-    role: "Women",
-    image: image8,  
-  },
-  {
-    name: "BS WHITE POLO SHIRTS",
-    role: "Unisex",
-    image: image9,  
-  },
-  {
-    name: "BS BLACK HOODIES",
-    role: "Unisex",
-    image: image10,  
-  },
-  {
-    name: "BS SHORT SLEEVES U NECK",
-    role: "Women",
-    image: image11,  
+    image: image6
   },
   {
     name: "BS ALL COLOR LONG SKIRTS",
     role: "Women",
-    image: image13,  
-  },
-  {
-    name: "BS V-NECK LONG-SLEEVE WHITE POLO SHIRT",
-    role: "Unisex",
-    image: image15,  
-  },
-  {
-    name: "BS WHITE HOODIES",
-    role: "Unisex",
-    image: image16,  
-  },
-  {
-    name: "BS WHITE POLO SHIRTS",
-    role: "Unisex",
-    image: image19,  
-  },
-  {
-    name: "BS WHITE HOODIES",
-    role: "Unisex",	
-    image: image21,
-  },
-  {
-    name: "BS WHITE POLO SHIRTS",
-    role: "Unisex",	
-    image: image23,
-  },
-  {
-    name: "BS BLACK RW-MADE INSPIRED SHIRT",
-    role: "Male",	
-    image: image22,
+    image: image13
   },
 ];
-

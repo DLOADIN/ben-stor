@@ -64,7 +64,7 @@ export const destinations: Destination[] = [
     relatedImages: [
       { url: virungaimage8, title: "Mountain Gorilla Encounter", description: "Get up close and personal with the majestic mountain gorillas in their natural habitat." },
       { url: virungaimage4, title: "Golden Monkey Trek", description: "Embark on a thrilling trek to spot the rare and endangered golden monkeys." },
-  
+      { url: virungaimage5, title: "Catch Drone Sightings", description: "Visit the grave of the famous conservationist Dian Fossey, who dedicated her life to protecting the mountain gorillas." },
       { url: virungaimage9, title: "Dian Fossey", description: "Visit the grave of the famous conservationist Dian Fossey, who dedicated her life to protecting the mountain gorillas." },
       { url: virungaimage7, title: "Lake Burera", description: "Take in the stunning views of Lake Burera, a picturesque lake nestled in the heart of the park." },
       { url: virungaimage2, title: "Virunga National Park Resorts & Lodges", description: "Enjoy breathtaking views of the Virunga Mountains at the many lodges in Virunga , Many luxury resorts that offer private villas and a range of activities, Best experiences" },
