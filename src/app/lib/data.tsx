@@ -27,6 +27,14 @@ import image25 from '@/assets/MUSEUMS/maison-du-dr-kandt.jpg'
 import image26 from '@/assets/MUSEUMS/national-museum-of-rwanda.jpg'
 import image27 from '@/assets/MUSEUMS/the-main-museum-building.jpg'
 import image28 from '@/assets/MUSEUMS/this-is-the-view-of-the.jpg'
+import virungaimage1 from '@/assets/VIRUNGA/1.jpg'
+import virungaimage2 from '@/assets/VIRUNGA/2.jpg'
+import virungaimage4 from '@/assets/VIRUNGA/4.jpg'
+import virungaimage5 from '@/assets/VIRUNGA/5.jpg'
+import virungaimage6 from '@/assets/VIRUNGA/6.jpg'
+import virungaimage7 from '@/assets/VIRUNGA/7.jpg'
+import virungaimage8 from '@/assets/VIRUNGA/8.jpg'
+import virungaimage9 from '@/assets/VIRUNGA/9.jpg'
 import { StaticImageData } from 'next/image'
 
 export interface RelatedImage {
@@ -45,9 +53,28 @@ export interface Destination {
 }
 
 export const destinations: Destination[] = [
-  // Akagera National Park
+  //Volcanoes National Park 
   {
     id: 1,
+    name: "Volcanoes National Park",
+    vacations: 8,
+    image: virungaimage1,
+    description:
+      "Immerse yourself in the majestic landscapes of Volcanoes National Park, home to the endangered mountain gorillas, golden monkeys, and a diverse array of flora and fauna. Explore the park's rugged terrain, lush forests, and sparkling lakes, and experience the thrill of trekking through the Virunga Mountains.",
+    relatedImages: [
+      { url: virungaimage8, title: "Mountain Gorilla Encounter", description: "Get up close and personal with the majestic mountain gorillas in their natural habitat." },
+      { url: virungaimage4, title: "Golden Monkey Trek", description: "Embark on a thrilling trek to spot the rare and endangered golden monkeys." },
+  
+      { url: virungaimage9, title: "Dian Fossey", description: "Visit the grave of the famous conservationist Dian Fossey, who dedicated her life to protecting the mountain gorillas." },
+      { url: virungaimage7, title: "Lake Burera", description: "Take in the stunning views of Lake Burera, a picturesque lake nestled in the heart of the park." },
+      { url: virungaimage2, title: "Virunga National Park Resorts & Lodges", description: "Enjoy breathtaking views of the Virunga Mountains at the many lodges in Virunga , Many luxury resorts that offer private villas and a range of activities, Best experiences" },
+      { url: virungaimage6, title: "Local Community Visit", description: "Visit a local community and learn about their traditional way of life, and how they coexist with the park's wildlife." },
+    ],
+  },
+
+  // Akagera National Park
+  {
+    id: 2,
     name: "Akagera National Park",
     vacations: 8,
     image: image1,
@@ -64,9 +91,10 @@ export const destinations: Destination[] = [
     ],
   },
 
+
   // Lake Kivu
   {
-    id: 2,
+    id: 3,
     name: "Lake Kivu",
     vacations: 6,
     image: image9,
@@ -79,6 +107,8 @@ export const destinations: Destination[] = [
       { url: image15, title: "The Lake's View", description: "Immerse yourself in the vibrant local culture of the region, Get to have the best fish the lake has to offer and so much more" },
     ],
   },
+
+
 
   // Nyungwe National Park
   {

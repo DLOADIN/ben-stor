@@ -24,7 +24,7 @@ export default function TravelCarousel() {
 
   
   useEffect(() => {
-    const timer = setInterval(next, 5000)
+    const timer = setInterval(next, 8000)
     return () => clearInterval(timer)
   }, [])
 
