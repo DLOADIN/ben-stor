@@ -74,7 +74,7 @@ export default function Navbar() {
 
           <div className="lg:flex items-center space-x-4 ml-6 py-2">
                 <a
-                  href="https://www.instagram.com/bs_brand_now"
+                  href="https://www.instagram.com/bs_brand_now_/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black hover:text-pink-500 transform hover:scale-110 transition-all duration-500 cursor-pointer"
@@ -109,7 +109,7 @@ export default function Navbar() {
           ))}
           <div className="flex space-x-4 mt-4 pb-10">
             <a
-              href="https://www.instagram.com/bs_brand_now"
+              href="https://www.instagram.com/bs_brand_now_/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black hover:text-pink-500 transform hover:scale-110 transition-all duration-500 cursor-pointer"

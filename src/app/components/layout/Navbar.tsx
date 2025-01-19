@@ -82,7 +82,7 @@ export default function Navbar() {
 
           <div className="flex items-center space-x-4 ml-6">
             <a
-              href="https://www.instagram.com/bs_brand_now"
+              href="https://www.instagram.com/bs_brand_now_/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black hover:text-pink-500 transition-all duration-300"
@@ -141,7 +141,7 @@ export default function Navbar() {
           )}
           <div className="flex space-x-4 mt-4">
             <a
-              href="https://www.instagram.com/bs_brand_now"
+              href="https://www.instagram.com/bs_brand_now_/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black hover:text-pink-500 transition-all duration-300"
