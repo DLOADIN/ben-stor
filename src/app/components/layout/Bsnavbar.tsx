@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import benstores from "@/PICS/benstorelogo.png"
+import bslogo from "@/assets/bslogo.png";
 
 
 export default function Navbar() {
