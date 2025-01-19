@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import bslogo from "@/assets/bslogo.png";
-import benstores from "@/PICS/benstorelogo.jpg"
 import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";

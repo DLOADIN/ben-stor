@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import secondlogo from "@/assets/bslogo.png"
+import benstores from "@/PICS/benstorelogo.png"
 
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between space-x-2">
         <Link href="/benstore" className="flex items-center ">
           <Image
-              src={secondlogo}
+              src={bslogo}
               alt="Brand Logo"
               height={130}
               width={130}
