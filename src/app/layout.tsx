@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://benstores.vercel.app/"),
+  metadataBase: new URL("https://bsbrandstore.com/"),
   title: {
     default: "BS BRAND",
     template: "%s | BS BRAND",

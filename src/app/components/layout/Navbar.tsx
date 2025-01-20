@@ -145,7 +145,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-black hover:text-pink-500 transition-all duration-300"
-            >
+            >git push
               <Instagram size={24} />
             </a>
             <a
