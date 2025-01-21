@@ -63,7 +63,7 @@ export default function Footer() {
               </a>
               
               <a 
-              href="https://www.instagram.com/bs_brand_now"
+              href="https://www.instagram.com/bs_brand_now_/"
               target="_blank"
               rel="noopener noreferrer"
                className="text-black hover:text-pink-600 duration-300">
