@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import bslogo from "@/assets/bslogo.png";
+import bslogo1 from "@/PICS/benstorelogo.png"
 import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";
@@ -35,8 +36,8 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md text-black">
   <div className="flex h-20 items-center justify-between px-6 sm:px-12 md:px-16 lg:px-20">
     {/* Logo Section */}
-    <div className="flex items-center space-x-4">
-      <Link href="/" className="flex items-center space-x-4">
+    <div className="flex items-center space-x-2">
+      <Link href="/" className="flex items-center space-x-2">
         <Image
           src={bslogo}
           alt="Brand Logo"
@@ -45,23 +46,19 @@ export default function Navbar() {
           priority
           className="dark:invert"
         />
-        <div className="hidden lg:block">
-          <p className="font-bold text-base text-black px-4 py-2 rounded-[25px] bg-gray-200 relative hover:text-white overflow-hidden group">
-            <span className="relative z-10">BS - BRAND</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-pink-500 transition-transform duration-[600ms] transform scale-x-0 origin-left group-hover:scale-x-100"></span>
-          </p>
-        </div>
+        </Link>
+        <Link href="/benstore" className="flex items-center space-x-2 mt-4">
+        <Image
+          src={bslogo1}
+          alt="Brand Logo"
+          height={110}
+          width={110}
+          priority
+          className="dark:invert"
+        />
       </Link>
     </div>
 
-    {/* Ben Stores Button */}
-    <div className="flex items-center justify-center lg:hidden">
-      <Link href="/benstore" className="flex items-center space-x-2">
-        <button className="text-pink-500 font-bold p-2 rounded-[25px] border border-pink-500 shadow-md shadow-pink-500 hover:shadow-none hover:shadow-md hover:shadow-pink-500/50 focus:shadow-none focus:shadow-md focus:shadow-pink-500/50" id="offset">
-          Ben Stores
-        </button>
-      </Link>
-    </div>
         <nav className="hidden lg:flex justify-center items-center space-x-8 text-center font-bold ml-auto">
           {links.map(({ href, label }) => (
             <Link

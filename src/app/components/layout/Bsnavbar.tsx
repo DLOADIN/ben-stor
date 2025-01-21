@@ -7,7 +7,7 @@ import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import bslogo from "@/assets/bslogo.png";
-
+import bslogo1 from "@/PICS/benstorelogo.png"
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -26,23 +26,33 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-md text-black">
-      <div className="flex h-20 items-center px-4 sm:px-8 md:px-12 lg:px-16">
-      <div className="flex items-center justify-between space-x-2">
-        <Link href="/benstore" className="flex items-center ">
-          <Image
-              src={bslogo}
-              alt="Brand Logo"
-              height={130}
-              width={130}
-              priority
-              className="dark:invert"
-            />
-            <p className="font-bold text-base text-black px-4 py-2 rounded-[25px] bg-gray-200 relative hover:text-white overflow-hidden group">
-              <span className="relative z-10">BEN - STORES</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-pink-500 transition-transform duration-[600ms] transform scale-x-0 origin-left group-hover:scale-x-100"></span>
-            </p>
-          </Link>
-        </div>
+      <div className="flex h-20 items-center justify-between px-6 sm:px-12 md:px-16 lg:px-20">
+    {/* Logo Section */}
+    <div className="flex items-center space-x-2">
+      <Link href="/" className="flex items-center space-x-2">
+        <Image
+          src={bslogo}
+          alt="Brand Logo"
+          height={130}
+          width={130}
+          priority
+          className="dark:invert"
+        />
+        </Link>
+        <Link href="/benstore" className="flex items-center space-x-2 mt-4">
+        <Image
+          src={bslogo1}
+          alt="Brand Logo"
+          height={110}
+          width={110}
+          priority
+          className="dark:invert"
+        />
+      </Link>
+    </div>
+
+
+
         <button
           className="ml-auto mx-5 lg:hidden block text-white focus:outline-none"
           onClick={() => setMenuOpen(!isMenuOpen)}
