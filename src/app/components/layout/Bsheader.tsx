@@ -57,7 +57,7 @@ export default function HeroSection() {
     <div className="relative min-h-screen text-black overflow-hidden">
       <Navbar />
       <div className="relative max-w-[1400px] mx-auto px-4 pt-20">
-        <div className="flex flex-col items-center lg:grid lg:grid-cols-2 gap-12 min-h-[calc(100vh-80px)]">
+        <div className="flex flex-col iteÑms-center lg:grid lg:grid-cols-2 gap-12 min-h-[calc(100vh-80px)]">
           <div className="space-y-8 text-center lg:text-left max-w-2xl lg:mx-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
