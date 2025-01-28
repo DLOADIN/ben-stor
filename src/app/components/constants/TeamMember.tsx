@@ -92,6 +92,9 @@ import editionimg71 from '@/assets/EDITION3/DSC09953.jpg';
 import editionimg72 from '@/assets/EDITION3/DSC09971.jpg';
 import editionimg73 from '@/assets/EDITION3/DSC09972.jpg';
 import editionimg74 from '@/assets/EDITION3/DSC09980.jpg';
+import editionimg75 from '@/assets/EDITION3/DSC09992.jpg';
+import editionimg76 from '@/assets/EDITION3/DSC09996.jpg';
+import editionimg77 from '@/assets/EDITION3/DSC09998.jpg';
 
 export interface TeamMember {
   name: string;
@@ -161,7 +164,7 @@ export const teamMembers: TeamMember[] = [
     ]
   },
   {
-    name: "BS STREET SHIRTS",
+    name: "BS SHIRTS",
     role: "Male",
     image: editionimg61,
     variants:[
@@ -173,7 +176,20 @@ export const teamMembers: TeamMember[] = [
         role: "Male",
         image: editionimg62
       },
-    ]},
+      {
+        role: "Male",
+        image: editionimg75
+      },
+      {
+        role: "Male",
+        image: editionimg76
+      },
+      {
+        role: "Male",
+        image: editionimg77
+      },
+    ]
+  },
 
   {
     name: "BS PETITE T-SHIRTS",

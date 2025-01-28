@@ -39,7 +39,6 @@ export default function EnhancedCarousel() {
   })]);
 
   const findRelatedItems = (item: TeamMember) => {
-    // Find items with similar names or same category
     const itemKeywords = item.name.toLowerCase().split(' ');
     return teamMembers.filter(member => {
       const memberKeywords = member.name.toLowerCase().split(' ');
