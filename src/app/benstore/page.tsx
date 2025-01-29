@@ -1,3 +1,5 @@
+"use client"
+
 import { Metadata } from "next";
 import HeroSection from "@/app/components/layout/Bsheader";
 import StarryBackground from "@/app/components/effects/SnowEffect";
@@ -11,6 +13,7 @@ import TravelCarousel from "@/app/components/layout/Bsproducts"
 import Apartments from "@/app/components/layout/Bsapartments"
 import IPhoneShowcase from "@/app/components/layout/Bsiphones"
 import Accessories from "@/app/components/layout/Bsaccessorries"
+import { motion } from "framer-motion"
 
 const metadata: Metadata = {
   title: "BEN STORES",
@@ -19,7 +22,11 @@ const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div
+    <motion.div
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      exit={{opacity:0}}
+      transition={{duration:1.5}}
       style={{
         backgroundImage: "linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)",
       }}
@@ -39,7 +46,7 @@ export default function Home() {
           <FAQ />
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
