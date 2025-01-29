@@ -1,4 +1,7 @@
+"use client";
+
 import { Metadata } from "next";
+import { motion } from "framer-motion"
 import Navbar from "./components/layout/Navbar";
 import Header from "./components/layout/Header";
 import About from "./components/layout/About";
@@ -17,10 +20,12 @@ const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div 
-    style={{
-      backgroundImage: "linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)",
-    }}
+    <motion.div 
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      exit={{opacity:0}}
+      transition={{duration:1.5}}
+      style={{ backgroundImage: "linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)" }}
     >
       <Navbar />
       <main>
@@ -58,6 +63,6 @@ export default function Home() {
 
         <Footer />
       </main>
-    </div>
+    </motion.div>
   );
 }
