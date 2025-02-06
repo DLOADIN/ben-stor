@@ -67,7 +67,7 @@ const testimonials: Testimonial[] = [
     id: 5,
     name: "Grace Uwimana",
     role: "Freelance Writer",
-    company: "",
+    company: "Igihe House Media",
     image: pic5,
     quote: "Bs Brand is more than clothing. It’s a platform for faith, love, and purpose in action."
   },
