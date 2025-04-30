@@ -29,12 +29,12 @@ export default function Home() {
     >
       <Navbar />
       <main>
-        <section id="home" className="min-h-screen">
-          <Subnavbar />
+        <section id="home" className="pt-10">
+          <Header />
         </section>
 
         <section className="sm:mt-10">
-            <Header />
+        <Subnavbar />
           </section>
 
         <section id="about" className="min-h-screen">
