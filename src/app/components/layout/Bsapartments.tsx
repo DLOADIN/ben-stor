@@ -1,4 +1,4 @@
-"use client"
+
 
 import { motion } from "framer-motion";
 import { apartments } from "@/app/components/constants/apartments"

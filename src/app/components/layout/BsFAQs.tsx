@@ -1,4 +1,4 @@
-"use client"
+
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Minus, Plus } from 'lucide-react'

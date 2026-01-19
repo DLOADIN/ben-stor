@@ -1,4 +1,3 @@
-"use client"
 import apartment1 from "@/assets/Apartments/pexels-heyho-6970026.jpg" 
 import apartment2 from "@/assets/Apartments/pexels-pixabay-164938.jpg"
 import apartment3 from "@/assets/Apartments/pexels-heyho-6782363.jpg"
@@ -9,12 +8,11 @@ import apartment7 from "@/assets/Apartments/pexels-heyho-8146333.jpg"
 import apartment8 from "@/assets/Apartments/pexels-itsterrymag-2631746.jpg"
 import apartment9 from "@/assets/Apartments/pexels-jvdm-3753437.jpg"
 import apartment10 from "@/assets/Apartments/pexels-heyho-6301168.jpg"
-import { StaticImageData } from 'next/image';
 
 interface ApartmentCardProps {
   title: string;
   description: string;
-  image: string | StaticImageData;
+  image: string;
 }
 
 const apartments: ApartmentCardProps[] = [

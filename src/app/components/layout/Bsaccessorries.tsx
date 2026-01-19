@@ -1,9 +1,5 @@
-"use client"
-
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { StaticImageData } from 'next/image';
 import airwatch from '@/assets/Accessories/Refurbished Apple Watch Series 6 Gps, 40mm Space Gray Aluminum Case with Black Sport Band - Regular, Adult Unisex, Size_40 mm.jpeg'
 import airpods from '@/assets/Accessories/83563cd0-42f8-461a-a834-25a850a1130a.jpeg'
 import Magsafe from "@/assets/Accessories/Apple MagSafe Charger (2m).jpeg"
@@ -16,7 +12,7 @@ import ipad from '@/assets/Accessories/Apple iPad Pro 11.jpeg'
 interface Accessory {
   name: string;
   description: string;
-  image: StaticImageData | string;
+  image: string;
 }
 
 const accessories: Accessory[] = [
@@ -119,11 +115,10 @@ export default function AccessoriesCarousel() {
             >
               <div className="bg-gradient-to-t from-[#a8edea] to-[#fed6e3] rounded-3xl p-6 h-[400px] transition-transform transform group-hover:scale-105">
                 <div className="relative w-full h-48 mb-6">
-                  <Image
+                  <img
                     src={accessory.image}
                     alt={accessory.name}
-                    fill
-                    className="object-cover rounded-2xl"
+                    className="object-cover rounded-2xl w-full h-full"
                   />
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800 mb-3">

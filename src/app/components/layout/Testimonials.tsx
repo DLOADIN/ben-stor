@@ -1,11 +1,8 @@
-"use client";
-
 import { Building2, Briefcase } from "lucide-react";
 import { testimonials, Testimonial } from "../constants/Testaments";
 import { cn } from "@/app/lib/utils";
 import Marquee from "../constants/Marquee";
 import { motion } from "framer-motion"
-import Image from 'next/image'
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <figure
@@ -16,7 +13,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     )}
   >
     <div className="flex items-start gap-4 mb-4">
-      <Image
+      <img
         src={typeof testimonial.image === 'string' ? testimonial.image : testimonial.image.src}
         alt={`Profile picture of ${testimonial.name}`}
         width={typeof testimonial.image === 'object' ? testimonial.image.width : 48}

@@ -1,10 +1,7 @@
-'use client';
-
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import Image from "next/image";
 import Navbar from "@/app/components/layout/Bsnavbar";
 import Tours from "@/assets/Tours.jpg";
 import Iphone from "@/assets/Iphone.jpg";
@@ -75,7 +72,7 @@ export default function HeroSection() {
                 like renting cars, apartments and much more.
               </p>
               <div className="flex justify-center lg:justify-start gap-4">
-                <Link href="#video">
+                <Link to="#video">
                   <motion.button
                     className="px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-colors"
                     whileHover={{ scale: 1.05 }}
@@ -94,11 +91,10 @@ export default function HeroSection() {
                     <div key={index} className="relative flex-none w-full">
                       <div className="relative h-24 w-full flex justify-center lg:justify-start">
                         <div className="relative w-24 h-32 bg-black/40 backdrop-blur-sm p-1 rounded-xl">
-                          <Image
+                          <img
                             src={image.src}
                             alt={image.alt}
-                            fill
-                            className="rounded-lg object-cover"
+                            className="rounded-lg object-cover w-full h-full"
                           />
                         </div>
                       </div>
@@ -136,18 +132,10 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 transform perspective-1000 rotate-y-[-12deg] origin-left">
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
-                <Image
+                <img
                   src={images[selectedIndex].src}
                   alt="Featured image"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 640px) 300px,
-                        (max-width: 768px) 400px,
-                        (max-width: 1024px) 500px,
-                        (max-width: 1280px) 600px,
-                        (max-width: 1536px) 700px,
-                        800px"
+                  className="object-cover w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
               </div>

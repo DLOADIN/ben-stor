@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import image1 from '@/PICS/DGT_6785.jpg';
 import image2 from '@/PICS/DGT_6547.jpg';
 import image3 from '@/PICS/DGT_6752.jpg';
@@ -99,10 +98,10 @@ import editionimg77 from '@/assets/EDITION3/DSC09998.jpg';
 export interface TeamMember {
   name: string;
   role: string;
-  image: string | StaticImageData;
+  image: string;
   variants?: Array<{
     role: string;
-    image: string | StaticImageData;
+    image: string;
   }>;
 }
 

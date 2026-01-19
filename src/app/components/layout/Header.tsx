@@ -1,7 +1,4 @@
-  "use client"
-
   import { useState, useEffect } from 'react'
-  import Image from 'next/image'
   // import image1 from '@/assets/DGT_6621.jpg'
   // import image1 from '@/assets/DGT_6547.jpg'
   import image2 from '@/assets/DGT_6533.jpg'
@@ -110,12 +107,10 @@
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <Image
+            <img
               src={slide.image}
               alt={slide.alt}
-              layout="fill"
-              objectFit="cover"
-              priority={index === 0}
+              className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-10 text-white p-4">
               <p className="text-xl font-semibold">{slide.paragraph}</p>

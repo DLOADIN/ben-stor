@@ -1,10 +1,7 @@
-'use client'
-
 import { Button } from "@/app/components/ui/button"
 import { Card, CardContent } from "@/app/components/ui/card"
 import { Input } from "@/app/components/ui/input"
 import { Textarea } from "@/app/components/constants/Textarea"
-import Image from "next/image"
 import imageone from "@/PICS/Untitled design.jpg"
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
@@ -218,11 +215,10 @@ export default function Contact() {
             
             <div className="relative h-full min-h-[400px] lg:min-h-[600px]">
               <div className="absolute inset-0 bg-blue-100 opacity-20" />
-              <Image
+              <img
                 src={imageone}
                 alt="Contact support"
-                fill
-                className="object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
           </div>

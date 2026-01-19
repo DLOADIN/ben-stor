@@ -1,8 +1,5 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import iphone7 from '@/assets/Iphone/8.jpg'
 import iphone8 from '@/assets/Iphone/7.jpg'
@@ -189,12 +186,10 @@ export default function IPhoneShowcase() {
             >
               <div className="text-center max-w-4xl mx-auto">
                 <div className="relative w-[500px] h-[600px] mx-auto mb-8">
-                  <Image
+                  <img
                     src={iphones[currentIndex].image}
                     alt={iphones[currentIndex].name}
-                    fill
-                    className="object-cover rounded-3xl shadow-2xl"
-                    priority
+                    className="object-cover rounded-3xl shadow-2xl w-full h-full"
                   />
                 </div>
                 {iphones[currentIndex].isNew && (

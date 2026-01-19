@@ -1,12 +1,9 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/app/components/ui/button"
 import { Dialog, DialogContent } from "@/app/components/ui/dialog"
 import { destinations, type Destination } from "@/app/lib/data"
-import Image from "next/image"
 
 export default function TravelCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -83,12 +80,10 @@ export default function TravelCarousel() {
               }}
               className="group relative h-full w-full cursor-pointer"
             >
-              <Image
+              <img
                 src={destinations[currentIndex].image}
                 alt={destinations[currentIndex].name}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                priority
+                className="object-cover transition-transform duration-500 group-hover:scale-105 w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -144,12 +139,10 @@ export default function TravelCarousel() {
                   transition={{ duration: 0.5 }}
                   className="relative h-full w-full"
                 >
-                  <Image
+                  <img
                     src={selectedDestination.relatedImages[selectedImageIndex].url}
                     alt={selectedDestination.relatedImages[selectedImageIndex].title}
-                    fill
-                    className="object-cover"
-                    priority
+                    className="object-cover w-full h-full"
                   />
                 </motion.div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
@@ -172,11 +165,10 @@ export default function TravelCarousel() {
                         : "hover:opacity-80"
                     }`}
                   >
-                    <Image
+                    <img
                       src={image.url}
                       alt={image.title}
-                      fill
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </button>
                 ))}

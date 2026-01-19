@@ -1,7 +1,4 @@
-'use client'
-
 import React, { useState, useEffect } from 'react';
-import Image from "next/image";
 import { Card } from "@/app/components/ui/card";
 import { Dialog, DialogContent } from "@/app/components/ui/dialog";
 import useEmblaCarousel from "embla-carousel-react";
@@ -104,11 +101,10 @@ export default function EnhancedCarousel() {
                   ${isMobile && expandedIndex === index ? 'scale-105' : ''}`}
                 >
                   <div className="relative h-full pb-20 group">
-                    <Image
+                    <img
                       src={member.image}
                       alt={member.name}
-                      fill
-                      className="object-cover rounded-lg transform 
+                      className="object-cover rounded-lg transform w-full h-full absolute inset-0
                         transition-transform duration-500 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0" />
@@ -134,11 +130,10 @@ export default function EnhancedCarousel() {
           {selectedItem && (
             <div className="space-y-8">
               <div className="relative h-[50vh]">
-                <Image
+                <img
                   src={selectedItem.image}
                   alt={selectedItem.name}
-                  fill
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-lg w-full h-full"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                   <h2 className="text-2xl font-bold text-white">{selectedItem.name}</h2>
@@ -152,11 +147,10 @@ export default function EnhancedCarousel() {
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                     {selectedItem.variants.map((variant, index) => (
                       <div key={`variant-${index}`} className="relative h-64 group">
-                        <Image
+                        <img
                           src={variant.image}
                           alt={`${selectedItem.name} Variant ${index + 1}`}
-                          fill
-                          className="object-cover rounded-lg transition-transform 
+                          className="object-cover rounded-lg transition-transform w-full h-full
                             duration-300 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

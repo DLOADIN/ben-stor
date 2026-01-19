@@ -1,8 +1,5 @@
-"use client"
-
 import React from 'react';
 import { Card } from "../ui/card";
-import Image from "next/image";
 import Kentucky from '@/PICS/Places/pexels-owen-outdoors-409204690-27330767.jpg'
 import Rwanda from '@/PICS/Places/Rwanda 🇷🇼.jpg'
 import Arizona from '@/PICS/Places/pexels-patrick-boyer-2209232-3868552.jpg'
@@ -55,11 +52,10 @@ const LocationCard = ({ card }: { card: typeof LOCATION_CARDS[number] }) => (
     </div>
 
     <div className="relative w-full md:w-2/5 aspect-[4/3] md:aspect-auto min-h-[200px] md:min-h-full">
-      <Image
+      <img
         src={card.image}
         alt={`Office location in ${card.country}`}
-        fill
-        className="object-cover"
+        className="object-cover w-full h-full"
       />
     </div>
   </div>

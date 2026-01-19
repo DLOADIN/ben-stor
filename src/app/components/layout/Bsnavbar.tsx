@@ -1,16 +1,12 @@
-"use client";
-
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { Link, useLocation } from "react-router-dom";
 import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import { usePathname } from "next/navigation";
 import bslogo from "@/assets/bslogo.png";
 import bslogo1 from "@/PICS/benstorelogo.png"
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const links = [
@@ -29,23 +25,21 @@ export default function Navbar() {
       <div className="flex h-20 items-center justify-between px-6 sm:px-12 md:px-16 lg:px-20">
     {/* Logo Section */}
     <div className="flex items-center space-x-2">
-      <Link href="/" className="flex items-center space-x-2">
-        <Image
+      <Link to="/" className="flex items-center space-x-2">
+        <img
           src={bslogo}
           alt="Brand Logo"
           height={130}
           width={130}
-          priority
           className="dark:invert"
         />
         </Link>
-        <Link href="/benstore" className="flex items-center space-x-2 mt-4">
-        <Image
+        <Link to="/benstore" className="flex items-center space-x-2 mt-4">
+        <img
           src={bslogo1}
           alt="Brand Logo"
           height={110}
           width={110}
-          priority
           className="dark:invert"
         />
       </Link>
@@ -68,7 +62,7 @@ export default function Navbar() {
           {links.map(({ href, label }) => (
             <Link
               key={href}
-              href={href}
+              to={href}
               className={`${
                 pathname === href ? "text-pink-500" : ""
               } hover:text-pink-500 transform hover:scale-110 transition-all duration-500 cursor-pointer relative group`}
@@ -108,7 +102,7 @@ export default function Navbar() {
           {links.map(({ href, label }) => (
             <Link
               key={href}
-              href={href}
+              to={href}
               onClick={() => setMenuOpen(false)}
               className={`block text-sm font-bold py-2 px-3 rounded ${
                 pathname === href ? "text-pink-500 bg-gray-200" : ""

@@ -1,16 +1,14 @@
-"use client"
 import car1 from "@/assets/IMG-20241007-WA0015.jpg"
 import car2 from "@/assets/IMG-20241007-WA0018.jpg"
 import car3 from "@/assets/IMG-20241007-WA0019.jpg"
 import car4 from "@/assets/IMG-20241007-WA0040.jpg"
 import car5 from "@/assets/IMG-20241007-WA0042.jpg"
 import car6 from "@/assets/IMG-20241007-WA0043.jpg"
-import { StaticImageData } from 'next/image';
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  image: string | StaticImageData;
+  image: string;
 }
 
 export const services: ProjectCardProps[] = [

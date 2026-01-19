@@ -1,24 +1,16 @@
-
-
-import { Metadata } from "next";
 import { motion } from "framer-motion"
-import Navbar from "./components/layout/Navbar";
-import Header from "./components/layout/Header";
-import About from "./components/layout/About";
-import Products from "./components/layout/Products";
-import Location from "./components/layout/Location";
-import TestimonialsCarousel from "./components/layout/Testimonials";
-import CEOCard from "./components/layout/CeoCard";
-import Contact from "./components/layout/Contact";
-import Footer from "./components/layout/Footer";
-import Subnavbar from "./components/layout/Subnavbar";
+import Navbar from "../app/components/layout/Navbar"
+import Header from "../app/components/layout/Header"
+import About from "../app/components/layout/About"
+import Products from "../app/components/layout/Products"
+import Location from "../app/components/layout/Location"
+import TestimonialsCarousel from "../app/components/layout/Testimonials"
+import CEOCard from "../app/components/layout/CeoCard"
+import Contact from "../app/components/layout/Contact"
+import Footer from "../app/components/layout/Footer"
+import Subnavbar from "../app/components/layout/Subnavbar"
 
-const metadata: Metadata = {
-  title: "BS BRAND",
-  description: "The home page of BS BRAND & BEN STORES",
-};
-
-export default function Home() {
+export default function HomePage() {
   return (
     <motion.div 
       initial={{opacity:0}}
@@ -34,8 +26,8 @@ export default function Home() {
         </section>
 
         <section className="sm:mt-10">
-        <Subnavbar />
-          </section>
+          <Subnavbar />
+        </section>
 
         <section id="about" className="min-h-screen">
           <About />
@@ -64,5 +56,5 @@ export default function Home() {
         <Footer />
       </main>
     </motion.div>
-  );
+  )
 }

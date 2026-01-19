@@ -1,6 +1,4 @@
-"use client"
-
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from 'react';
@@ -25,12 +23,12 @@ export default function Footer() {
             <h2 className="text-2xl font-bold text-black mb-4">Ben Store</h2>
             <p className="mb-4">Anything we got ou covered - Just call us away | We are more than a Fashion Brand</p>
             <div className="flex space-x-4">
-            <Link href="/benstore" className="flex items-center space-x-2">
+            <Link to="/benstore" className="flex items-center space-x-2">
               <button className="bg-white hover:bg-pink-50 text-pink-500 font-bold py-2 px-4 rounded border border-pink-500">
                 Try Ben Stores
               </button>
               </Link>
-            <Link href="../" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
                   Try BS Brand
               </button>
@@ -42,7 +40,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="hover:text-pink-600 transition-colors">
+                  <Link to={link.href} className="hover:text-pink-600 transition-colors">
                     {link.label}
                   </Link>
                 </li>

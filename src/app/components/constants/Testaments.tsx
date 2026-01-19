@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import pic1 from '@/PICS/Testimonials_assets/dogiteri_nsabii_469721903_18048820607113517_1735180949973337094_n.jpg'
 import pic2 from '@/PICS/Testimonials_assets/ndimbati250_461776262_395260200134876_1333684609725121973_n.webp'
 import pic3 from '@/PICS/Testimonials_assets/pexels-divinetechygirl-1181519.jpg'
@@ -26,7 +25,7 @@ interface Testimonial {
   name: string;
   role: string;
   company: string;
-  image: string | StaticImageData;
+  image: string;
   quote: string;
 }
 

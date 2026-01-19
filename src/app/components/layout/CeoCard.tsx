@@ -1,8 +1,5 @@
-"use client"
-
 import { Card, CardContent } from "@/app/components/ui/card"
 import { Cross } from 'lucide-react'
-import Image from 'next/image'
 import { motion } from "framer-motion"
 import Image1 from '@/PICS/CEO.jpg'
 
@@ -77,12 +74,10 @@ export default function CEOCard() {
             </blockquote>
           </CardContent>
           <div className="relative h-full min-h-[300px] md:min-h-full">
-            <Image
+            <img
               src={Image1}
               alt="Igisubizo Benjamin"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-r-lg"
+              className="rounded-r-lg w-full h-full object-cover"
             />
           </div>
         </div>

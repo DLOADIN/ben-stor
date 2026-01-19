@@ -1,5 +1,3 @@
-"use client"
-
 import image1 from '@/assets/AKAGERA/pexels-arthurbrognoli-2317536.jpg'
 import image2 from '@/assets/AKAGERA/pexels-followalice-667205.jpg'
 import image3 from '@/assets/AKAGERA/pexels-jesus-esteban-san-jose-11194232-30148522.jpg'
@@ -35,10 +33,9 @@ import virungaimage6 from '@/assets/VIRUNGA/6.jpg'
 import virungaimage7 from '@/assets/VIRUNGA/7.jpg'
 import virungaimage8 from '@/assets/VIRUNGA/8.jpg'
 import virungaimage9 from '@/assets/VIRUNGA/9.jpg'
-import { StaticImageData } from 'next/image'
 
 export interface RelatedImage {
-  url: StaticImageData
+  url: string
   title: string
   description: string
 }
@@ -47,7 +44,7 @@ export interface Destination {
   id: number
   name: string
   vacations: number
-  image: StaticImageData
+  image: string
   description: string
   relatedImages: RelatedImage[]
 }

@@ -1,4 +1,4 @@
-"use client"
+
 
 import { Car, MessageSquare, PiggyBank, Shirt, Smartphone, Plane, Watch, Laptop, Mountain } from 'lucide-react'
 

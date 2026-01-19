@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect, useRef } from "react"
 import {
   Carousel,
@@ -9,7 +7,6 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/app/components/ui/carousel"
-import Image from "next/image"
 import { slides, type SlideType } from "../constants/slides"
 
 interface FloatingIconProps {
@@ -55,11 +52,10 @@ export default function Subnavbar() {
                 <p className="text-lg text-muted-foreground">{slide.subtitle}</p>
               </div>
               <div className="relative h-[550px]">
-                <Image
+                <img
                   src={slide.image}
                   alt="Feature illustration"
-                  fill
-                  className="rounded-2xl object-cover"
+                  className="rounded-2xl object-cover w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-mint-50/30 to-transparent rounded-2xl" />
                 {slide.icons.map((icon, i) => (
