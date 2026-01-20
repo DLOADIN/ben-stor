@@ -21,7 +21,7 @@ const bsVideos: Video[] = [
   {
     id: '1',
     title: 'BS Luxury Apartments',
-    description: 'Experience premium living in Kigali\'s finest locations with breathtaking city views and modern amenities',
+    description: 'Premium living in Kigali\'s finest locations',
     category: 'apartments',
     src: apartmentVideo,
     features: ['Modern Amenities', '24/7 Security', 'Prime Location']
@@ -29,7 +29,7 @@ const bsVideos: Video[] = [
   {
     id: '2',
     title: 'BS Safari Adventures',
-    description: 'Explore Rwanda\'s stunning wildlife at Akagera National Park with expert guides',
+    description: 'Explore Rwanda\'s stunning landscapes and wildlife',
     category: 'trips',
     src: tripVideo1,
     features: ['Expert Guides', 'All-Inclusive', 'Wildlife Encounters']
@@ -37,15 +37,15 @@ const bsVideos: Video[] = [
   {
     id: '3',
     title: 'BS Mountain Treks',
-    description: 'Journey through the Virunga Mountains and meet the majestic mountain gorillas',
+    description: 'Journey through the Bigogwe landscapes',
     category: 'trips',
     src: tripVideo2,
     features: ['Gorilla Trekking', 'Professional Guides', 'Unforgettable Experience']
   },
   {
     id: '4',
-    title: 'BS Lake Kivu Getaway',
-    description: 'Relax on the beautiful shores of Lake Kivu with stunning sunsets and water activities',
+    title: 'BS Nyungwe Forest Escape',
+    description: 'Discover the beauty of Nyungwe Forest and much more',
     category: 'trips',
     src: tripVideo3,
     features: ['Beach Access', 'Water Sports', 'Scenic Views']
@@ -60,38 +60,58 @@ export default function VideoShowcase() {
   const [isHovering, setIsHovering] = useState(false)
   const [activeFilter, setActiveFilter] = useState<'all' | 'apartments' | 'trips'>('all')
   const videoRef = useRef<HTMLVideoElement>(null)
-  const autoplayTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const filteredVideos = activeFilter === 'all' 
     ? bsVideos 
     : bsVideos.filter(v => v.category === activeFilter)
 
-  useEffect(() => {
-    if (isPlaying && !isHovering) {
-      autoplayTimerRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % filteredVideos.length)
-      }, 5000)
-    }
-
-    return () => {
-      if (autoplayTimerRef.current) clearInterval(autoplayTimerRef.current)
-    }
-  }, [isPlaying, isHovering, filteredVideos.length])
-
+  // Reset index when filter changes
   useEffect(() => {
     setCurrentIndex(0)
+    setIsPlaying(false)
   }, [activeFilter])
 
-  // Handle video play/pause
+  // Handle video ended - auto advance to next video
+  const handleVideoEnded = () => {
+    // Move to next video and continue playing
+    setCurrentIndex((prev) => {
+      const nextIndex = (prev + 1) % filteredVideos.length
+      return nextIndex
+    })
+    // Keep playing the next video
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play()
+      }
+    }, 100)
+  }
+
+  // Handle video play/pause and load new video when index changes
+  useEffect(() => {
+    if (videoRef.current) {
+      // Load the new video source
+      videoRef.current.load()
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {
+          // Auto-play was prevented, user interaction needed
+          setIsPlaying(false)
+        })
+      }
+    }
+  }, [currentIndex])
+
+  // Handle play state changes
   useEffect(() => {
     if (videoRef.current) {
       if (isPlaying) {
-        videoRef.current.play()
+        videoRef.current.play().catch(() => {
+          setIsPlaying(false)
+        })
       } else {
         videoRef.current.pause()
       }
     }
-  }, [isPlaying, currentIndex])
+  }, [isPlaying])
 
   // Handle video mute and volume
   useEffect(() => {
@@ -110,18 +130,41 @@ export default function VideoShowcase() {
   }
 
   const goToNext = () => {
-    setIsPlaying(false)
+    const wasPlaying = isPlaying
     setCurrentIndex((prev) => (prev + 1) % filteredVideos.length)
+    // Continue playing if it was playing before
+    if (wasPlaying) {
+      setTimeout(() => {
+        if (videoRef.current) videoRef.current.play()
+      }, 100)
+    }
   }
 
   const goToPrev = () => {
-    setIsPlaying(false)
+    const wasPlaying = isPlaying
     setCurrentIndex((prev) => (prev - 1 + filteredVideos.length) % filteredVideos.length)
+    // Continue playing if it was playing before
+    if (wasPlaying) {
+      setTimeout(() => {
+        if (videoRef.current) videoRef.current.play()
+      }, 100)
+    }
   }
 
   const goToSlide = (index: number) => {
-    setIsPlaying(false)
+    const wasPlaying = isPlaying
     setCurrentIndex(index)
+    // Continue playing if it was playing before
+    if (wasPlaying) {
+      setTimeout(() => {
+        if (videoRef.current) videoRef.current.play()
+      }, 100)
+    }
+  }
+
+  // Helper function to get adjacent video indices (for preview cards)
+  const getAdjacentIndex = (offset: number) => {
+    return (currentIndex + offset + filteredVideos.length) % filteredVideos.length
   }
 
   const currentVideo = filteredVideos[currentIndex]
@@ -183,7 +226,7 @@ export default function VideoShowcase() {
             <button
               key={key}
               onClick={() => setActiveFilter(key as typeof activeFilter)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
                 activeFilter === key
                   ? 'bg-black text-white shadow-lg scale-105'
                   : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-black shadow-md border border-gray-200'
@@ -195,167 +238,237 @@ export default function VideoShowcase() {
           ))}
         </motion.div>
 
-        {/* Main Video Container */}
-        <motion.div
-          className="relative group rounded-3xl overflow-hidden shadow-2xl bg-black"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
+        {/* Phone-Style Video Carousel */}
+        <motion.div 
+          className="relative flex items-center justify-center"
           variants={itemVariants}
         >
-          {/* Actual Video Player */}
-          <AnimatePresence mode="wait">
+          {/* Navigation - Left */}
+          <button
+            onClick={goToPrev}
+            className="hidden md:flex absolute left-4 lg:left-8 z-20 bg-white/90 hover:bg-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 text-gray-800"
+            aria-label="Previous video"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+
+          {/* Video Cards Container */}
+          <div className="flex items-center justify-center gap-3 md:gap-6 w-full max-w-6xl px-4">
+            
+            {/* Left Preview Card (hidden on small screens) */}
             <motion.div 
-              key={currentVideo?.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full aspect-video bg-black"
+              className="hidden lg:block relative w-40 xl:w-48 flex-shrink-0 cursor-pointer"
+              onClick={goToPrev}
+              whileHover={{ scale: 1.02, opacity: 0.8 }}
             >
-              <video
-                ref={videoRef}
-                src={currentVideo?.src}
-                className="w-full h-full object-cover"
-                loop
-                playsInline
-                onLoadedData={() => {
-                  if (videoRef.current) {
-                    videoRef.current.volume = volume
-                    videoRef.current.muted = isMuted
-                  }
-                }}
-              />
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-              {/* Category Badge */}
-              <div className="absolute top-6 left-6 z-10">
-                <span className={`px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-md ${
-                  currentVideo?.category === 'apartments'
-                    ? 'bg-white/90 text-black'
-                    : 'bg-white/90 text-black'
-                }`}>
-                  {currentVideo?.category === 'apartments' ? (
-                    <><Home className="w-4 h-4 inline mr-2" />BS Apartments</>
-                  ) : (
-                    <><MapPin className="w-4 h-4 inline mr-2" />BS Trips</>
-                  )}
-                </span>
-              </div>
-
-              {/* Volume Controls */}
-              <div className="absolute top-6 right-6 z-10 flex items-center gap-2 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full px-3 py-2 transition-all duration-300 group/volume">
-                <button
-                  onClick={toggleMute}
-                  className="text-white"
-                  aria-label={isMuted ? "Unmute" : "Mute"}
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-5 h-5" />
-                  ) : (
-                    <Volume2 className="w-5 h-5" />
-                  )}
-                </button>
-                <input
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.1"
-                  value={isMuted ? 0 : volume}
-                  onChange={(e) => {
-                    const newVolume = parseFloat(e.target.value)
-                    setVolume(newVolume)
-                    if (newVolume > 0 && isMuted) setIsMuted(false)
-                    if (newVolume === 0) setIsMuted(true)
-                  }}
-                  className="w-0 group-hover/volume:w-20 transition-all duration-300 accent-white cursor-pointer"
+              <div className="relative aspect-[9/16] rounded-3xl overflow-hidden shadow-lg opacity-40">
+                <video
+                  src={filteredVideos[getAdjacentIndex(-1)]?.src}
+                  className="w-full h-full object-cover"
+                  muted
+                  playsInline
                 />
-              </div>
-
-              {/* Play/Pause Button */}
-              <button
-                onClick={togglePlay}
-                className="absolute inset-0 flex items-center justify-center z-10"
-              >
-                <motion.div 
-                  className={`bg-white/95 hover:bg-white p-5 rounded-full shadow-2xl transition-opacity duration-300 ${
-                    isPlaying && !isHovering ? 'opacity-0' : 'opacity-100'
-                  }`}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {isPlaying ? (
-                    <Pause className="w-8 h-8 text-black" fill="currentColor" />
-                  ) : (
-                    <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
-                  )}
-                </motion.div>
-              </button>
-
-              {/* Video Info Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 pointer-events-none">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <h3 className="text-2xl md:text-4xl font-bold text-white mb-2">
-                    {currentVideo?.title}
-                  </h3>
-                  <p className="text-white/90 text-sm md:text-lg mb-4 max-w-2xl">
-                    {currentVideo?.description}
-                  </p>
-                  
-                  {/* Features */}
-                  {currentVideo?.features && (
-                    <div className="flex flex-wrap gap-2 md:gap-3">
-                      {currentVideo.features.map((feature, i) => (
-                        <span 
-                          key={i}
-                          className="px-3 md:px-4 py-1 md:py-2 bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm rounded-full border border-white/30"
-                        >
-                          ✓ {feature}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </motion.div>
-              </div>
-
-              {/* Navigation Buttons */}
-              <button
-                onClick={goToPrev}
-                className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-3 md:p-4 rounded-full text-white hover:scale-110 z-10"
-                aria-label="Previous video"
-              >
-                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-              </button>
-
-              <button
-                onClick={goToNext}
-                className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-3 md:p-4 rounded-full text-white hover:scale-110 z-10"
-                aria-label="Next video"
-              >
-                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-              </button>
-
-              {/* Progress Bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-                <motion.div
-                  className="h-full bg-white"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${((currentIndex + 1) / filteredVideos.length) * 100}%` }}
-                  transition={{ duration: 0.3 }}
-                />
+                <div className="absolute inset-0 bg-black/40" />
               </div>
             </motion.div>
-          </AnimatePresence>
+
+            {/* Main Video Card - Phone Style */}
+            <motion.div 
+              className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] flex-shrink-0"
+              layout
+            >
+              {/* Phone Frame */}
+              <div className="relative bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] p-1.5 md:p-2 shadow-2xl">
+                {/* Phone Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-28 h-5 md:h-6 bg-gray-900 rounded-b-xl z-20 flex items-center justify-center">
+                  <div className="w-12 md:w-16 h-3 md:h-4 bg-black rounded-full" />
+                </div>
+
+                {/* Video Container - Portrait Aspect Ratio */}
+                <div className="relative aspect-[9/16] rounded-[1.75rem] md:rounded-[2.25rem] overflow-hidden bg-black">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentVideo?.id}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0"
+                    >
+                      <video
+                        ref={videoRef}
+                        src={currentVideo?.src}
+                        className="w-full h-full object-cover"
+                        playsInline
+                        onEnded={handleVideoEnded}
+                        onLoadedData={() => {
+                          if (videoRef.current) {
+                            videoRef.current.volume = volume
+                            videoRef.current.muted = isMuted
+                          }
+                        }}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+
+                  {/* Category Badge */}
+                  <div className="absolute top-8 md:top-10 left-1/2 -translate-x-1/2 z-10">
+                    <span className={`px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold backdrop-blur-md bg-white/90 text-black`}>
+                      {currentVideo?.category === 'apartments' ? (
+                        <><Home className="w-3 h-3 md:w-4 md:h-4 inline mr-1" />BS Apartments</>
+                      ) : (
+                        <><MapPin className="w-3 h-3 md:w-4 md:h-4 inline mr-1" />BS Trips</>
+                      )}
+                    </span>
+                  </div>
+
+                  {/* Volume Controls */}
+                  <div className="absolute top-8 md:top-10 right-2 md:right-4 z-10 flex items-center gap-1 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 transition-all duration-300 group/volume">
+                    <button
+                      onClick={toggleMute}
+                      className="text-white"
+                      aria-label={isMuted ? "Unmute" : "Mute"}
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-4 h-4" />
+                      ) : (
+                        <Volume2 className="w-4 h-4" />
+                      )}
+                    </button>
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.1"
+                      value={isMuted ? 0 : volume}
+                      onChange={(e) => {
+                        const newVolume = parseFloat(e.target.value)
+                        setVolume(newVolume)
+                        if (newVolume > 0 && isMuted) setIsMuted(false)
+                        if (newVolume === 0) setIsMuted(true)
+                      }}
+                      className="w-0 group-hover/volume:w-16 transition-all duration-300 accent-white cursor-pointer"
+                    />
+                  </div>
+
+                  {/* Play/Pause Button */}
+                  <button
+                    onClick={togglePlay}
+                    className="absolute inset-0 flex items-center justify-center z-10"
+                  >
+                    <motion.div 
+                      className={`bg-white/90 hover:bg-white p-3 md:p-4 rounded-full shadow-xl transition-opacity duration-300 ${
+                        isPlaying && !isHovering ? 'opacity-0' : 'opacity-100'
+                      }`}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-5 h-5 md:w-6 md:h-6 text-black" fill="currentColor" />
+                      ) : (
+                        <Play className="w-5 h-5 md:w-6 md:h-6 text-black ml-0.5" fill="currentColor" />
+                      )}
+                    </motion.div>
+                  </button>
+
+                  {/* Video Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 pointer-events-none">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <h3 className="text-base md:text-lg font-bold text-white mb-1 line-clamp-1">
+                        {currentVideo?.title}
+                      </h3>
+                      <p className="text-white/80 text-xs md:text-sm mb-2 line-clamp-2">
+                        {currentVideo?.description}
+                      </p>
+                      
+                      {/* Features - Compact */}
+                      {currentVideo?.features && (
+                        <div className="flex flex-wrap gap-1">
+                          {currentVideo.features.slice(0, 2).map((feature, i) => (
+                            <span 
+                              key={i}
+                              className="px-2 py-0.5 bg-white/20 backdrop-blur-sm text-white text-[10px] md:text-xs rounded-full"
+                            >
+                              ✓ {feature}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </motion.div>
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 rounded-b-[1.75rem] md:rounded-b-[2.25rem] overflow-hidden">
+                    <motion.div
+                      className="h-full bg-white"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${((currentIndex + 1) / filteredVideos.length) * 100}%` }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Home Bar */}
+                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-24 md:w-32 h-1 bg-gray-600 rounded-full" />
+              </div>
+            </motion.div>
+
+            {/* Right Preview Card (hidden on small screens) */}
+            <motion.div 
+              className="hidden lg:block relative w-40 xl:w-48 flex-shrink-0 cursor-pointer"
+              onClick={goToNext}
+              whileHover={{ scale: 1.02, opacity: 0.8 }}
+            >
+              <div className="relative aspect-[9/16] rounded-3xl overflow-hidden shadow-lg opacity-40">
+                <video
+                  src={filteredVideos[getAdjacentIndex(1)]?.src}
+                  className="w-full h-full object-cover"
+                  muted
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-black/40" />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Navigation - Right */}
+          <button
+            onClick={goToNext}
+            className="hidden md:flex absolute right-4 lg:right-8 z-20 bg-white/90 hover:bg-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 text-gray-800"
+            aria-label="Next video"
+          >
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
         </motion.div>
 
-        {/* Thumbnail Strip */}
+        {/* Mobile Navigation */}
+        <div className="flex md:hidden justify-center gap-4 mt-4">
+          <button
+            onClick={goToPrev}
+            className="bg-white p-3 rounded-full shadow-lg text-gray-800"
+            aria-label="Previous video"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="bg-white p-3 rounded-full shadow-lg text-gray-800"
+            aria-label="Next video"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Thumbnail Strip - Portrait Style */}
         <motion.div 
-          className="mt-6 md:mt-8 flex gap-3 md:gap-4 overflow-x-auto pb-4 px-2 scrollbar-hide"
+          className="mt-6 md:mt-8 flex justify-center gap-2 md:gap-3 overflow-x-auto pb-4 px-2 scrollbar-hide"
           variants={itemVariants}
         >
           {filteredVideos.map((video, index) => (
@@ -364,25 +477,22 @@ export default function VideoShowcase() {
               onClick={() => goToSlide(index)}
               className={`relative flex-shrink-0 rounded-xl overflow-hidden transition-all duration-300 ${
                 index === currentIndex
-                  ? 'ring-4 ring-black shadow-lg scale-105'
-                  : 'opacity-70 hover:opacity-100 hover:scale-102'
+                  ? 'ring-2 md:ring-3 ring-black shadow-lg scale-105'
+                  : 'opacity-60 hover:opacity-100'
               }`}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <video
                 src={video.src}
-                className="w-28 h-16 sm:w-40 sm:h-24 object-cover"
+                className="w-12 h-20 sm:w-14 sm:h-24 md:w-16 md:h-28 object-cover"
                 muted
                 playsInline
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-white text-xs font-medium truncate">{video.title}</p>
-              </div>
               {index === currentIndex && (
-                <div className="absolute top-2 right-2">
-                  <span className="w-2 h-2 bg-white rounded-full animate-pulse block" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
                 </div>
               )}
             </motion.button>
