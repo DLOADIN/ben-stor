@@ -4,6 +4,7 @@ import Header from "../app/components/layout/Header"
 import VideoShowcase from "../app/components/layout/VideoShowcase"
 import About from "../app/components/layout/About"
 import Products from "../app/components/layout/Products"
+import Ambassadors3DCarousel from "../app/components/layout/Ambassadors3DCarousel"
 import Location from "../app/components/layout/Location"
 import TestimonialsCarousel from "../app/components/layout/Testimonials"
 import CEOCard from "../app/components/layout/CeoCard"
@@ -41,6 +42,11 @@ export default function HomePage() {
 
         <section id="products" className="min-h-screen">
           <Products />
+        </section>
+
+        {/* BS Ambassadors 3D Carousel */}
+        <section id="ambassadors">
+          <Ambassadors3DCarousel />
         </section>
 
         <section className="min-h-screen">

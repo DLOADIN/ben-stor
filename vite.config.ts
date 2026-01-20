@@ -10,6 +10,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.HEIC', '**/*.mp4', '**/*.MP4'],
   build: {
     outDir: 'dist',
     sourcemap: false,

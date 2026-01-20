@@ -81,7 +81,7 @@ export default function Footer() {
           >
             {isHovered
               ? "themanzi.david@gmail.com / (+250) 791 291 003"
-              : <span>Designed & Crafted by <span className="font-bold italic">Manzi David</span></span>}
+              : <span>Designed & Crafted by <span className="font-bold italic">Manzi David</span> | (+250) 791 291 003</span>}
           </p>
         </div>
       </div>
