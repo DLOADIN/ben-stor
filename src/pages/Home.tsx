@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import Navbar from "../app/components/layout/Navbar"
 import Header from "../app/components/layout/Header"
+import VideoShowcase from "../app/components/layout/VideoShowcase"
 import About from "../app/components/layout/About"
 import Products from "../app/components/layout/Products"
 import Location from "../app/components/layout/Location"
@@ -23,6 +24,11 @@ export default function HomePage() {
       <main>
         <section id="home" className="pt-10">
           <Header />
+        </section>
+
+        {/* Video Showcase - BS Apartments & Trips */}
+        <section id="showcase" className="py-8">
+          <VideoShowcase />
         </section>
 
         <section className="sm:mt-10">
