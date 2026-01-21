@@ -20,7 +20,7 @@ import img7612 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7612.JPG'
 import img7613 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7613.JPG'
 import img7614 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7614.JPG'
 import img7616_1 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7616 (1).JPG'
-import img7616 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7616.JPG'
+// import img7616 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7616.JPG'
 import img7617 from '@/assets/BS MEN CASUAL CLOTHES/IMG_7617.JPG'
 
 interface ClothingImage {
@@ -47,7 +47,7 @@ const clothingImages: ClothingImage[] = [
   { id: 15, image: img7613, category: "Weekend Look" },
   { id: 16, image: img7614, category: "Casual Wear" },
   { id: 17, image: img7616_1, category: "Street Style" },
-  { id: 18, image: img7616, category: "Urban Fashion" },
+  // { id: 18, image: img7616, category: "Urban Fashion" },
   { id: 19, image: img7617, category: "Smart Casual" },
 ]
 
