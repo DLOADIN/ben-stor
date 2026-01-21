@@ -92,9 +92,18 @@ export default function WomensCasualCarousel() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   
   const totalItems = clothingImages.length
   const visibleCount = 7
+
+  // Detect screen size
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     clothingImages.forEach((item, index) => {
@@ -139,7 +148,7 @@ export default function WomensCasualCarousel() {
     const diff = index - currentIndex
     const normalizedDiff = ((diff + totalItems / 2) % totalItems) - totalItems / 2
     const angle = normalizedDiff * (360 / Math.min(visibleCount, totalItems))
-    const radius = 420
+    const radius = isMobile ? 280 : 650
     const radian = (angle * Math.PI) / 180
     const x = Math.sin(radian) * radius
     const z = Math.cos(radian) * radius - radius
@@ -192,8 +201,8 @@ export default function WomensCasualCarousel() {
 
         {/* 3D Carousel */}
         <div 
-          className="relative h-[520px] md:h-[620px]"
-          style={{ perspective: '1200px' }}
+          className="relative h-[700px] md:h-[620px]"
+          style={{ perspective: '1800px' }}
         >
           <div 
             className="absolute inset-0 flex items-center justify-center"
@@ -211,7 +220,9 @@ export default function WomensCasualCarousel() {
                     className="absolute cursor-pointer"
                     style={{
                       transformStyle: 'preserve-3d',
-                      width: style.isActive ? '340px' : '280px',
+                      width: isMobile 
+                        ? (style.isActive ? '240px' : '180px') 
+                        : (style.isActive ? '600px' : '400px'),
                     }}
                     animate={{
                       x: style.x,
@@ -230,7 +241,7 @@ export default function WomensCasualCarousel() {
                       relative rounded-2xl overflow-hidden shadow-2xl
                       ${style.isActive ? 'ring-4 ring-black/10' : ''}
                     `}>
-                      <div className="relative aspect-[1/2] overflow-hidden">
+                      <div className={`relative overflow-hidden ${isMobile ? 'w-[240px] h-[320px]' : 'w-[70vh] h-[90vh]'}`}>
                         {!isLoaded && (
                           <div className="absolute inset-0 flex items-center justify-center animate-pulse">
                             <div className="w-10 h-10 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
