@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Play, Pause, Home, MapPin, Sparkles, Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Import actual video files
-import apartmentVideo from '@/assets/BS APARTMENTS/WhatsApp Video 2026-01-19 at 15.33.42.mp4'
-import tripVideo1 from '@/assets/BS TRIPS/WhatsApp Video 2026-01-19 at 15.33.11.mp4'
-import tripVideo2 from '@/assets/BS TRIPS/WhatsApp Video 2026-01-19 at 15.34.47 (1).mp4'
-import tripVideo3 from '@/assets/BS TRIPS/WhatsApp Video 2026-01-19 at 15.34.55.mp4'
+// Video paths from public folder (works reliably in production)
+const apartmentVideo = '/videos/apartment-video.mp4'
+const tripVideo1 = '/videos/trip-video-1.mp4'
+const tripVideo2 = '/videos/trip-video-2.mp4'
+const tripVideo3 = '/videos/trip-video-3.mp4'
 
 interface Video {
   id: string
