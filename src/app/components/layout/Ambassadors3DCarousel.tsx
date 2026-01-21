@@ -2,19 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Play, Pause, MapPin } from 'lucide-react'
 
-// Import ALL ambassador images from BS AMBASSADORS folder (updated list)
+// Import ALL ambassador images from BS AMBASSADORS folder
+import img0316 from '@/assets/BS AMBASSADORS/IMG_0316.JPG.jpeg'
+import img0334 from '@/assets/BS AMBASSADORS/IMG_0334.JPG.jpeg'
 import img0682 from '@/assets/BS AMBASSADORS/IMG_0682 (1).JPG'
-import image011 from '@/assets/BS AMBASSADORS/IMG_7328.JPG'
 import img0683 from '@/assets/BS AMBASSADORS/IMG_0683.JPG'
+import img0915 from '@/assets/BS AMBASSADORS/IMG_0915.JPG.jpeg'
+import img0918 from '@/assets/BS AMBASSADORS/IMG_0918.JPG.jpeg'
 import img4439 from '@/assets/BS AMBASSADORS/IMG_4439.JPG'
-import img4440 from '@/assets/BS AMBASSADORS/IMG_4440.JPG'
-import img4442 from '@/assets/BS AMBASSADORS/IMG_4442.JPG'
-import img4443 from '@/assets/BS AMBASSADORS/IMG_4443.JPG'
-import img4446 from '@/assets/BS AMBASSADORS/IMG_4446.JPG'
-import img4449_2 from '@/assets/BS AMBASSADORS/IMG_4449 (2).JPG'
-import img4455 from '@/assets/BS AMBASSADORS/IMG_4455.JPG'
-import img4457 from '@/assets/BS AMBASSADORS/IMG_4457.JPG'
-import img4459_1 from '@/assets/BS AMBASSADORS/IMG_4459 (1).JPG'
 import img4464 from '@/assets/BS AMBASSADORS/IMG_4464.JPG'
 import img4466 from '@/assets/BS AMBASSADORS/IMG_4466.JPG'
 import img4575_1 from '@/assets/BS AMBASSADORS/IMG_4575 (1).JPG'
@@ -22,17 +17,14 @@ import img4576 from '@/assets/BS AMBASSADORS/IMG_4576.JPG'
 import img4719 from '@/assets/BS AMBASSADORS/IMG_4719.JPG'
 import img4721_1 from '@/assets/BS AMBASSADORS/IMG_4721 (1).JPG'
 import img6351 from '@/assets/BS AMBASSADORS/IMG_6351.JPG'
+import img7328 from '@/assets/BS AMBASSADORS/IMG_7328.JPG'
 import img7341 from '@/assets/BS AMBASSADORS/IMG_7341.JPG'
-import img7343 from '@/assets/BS AMBASSADORS/IMG_7343.JPG'
 import img7347 from '@/assets/BS AMBASSADORS/IMG_7347.JPG'
 import img7349 from '@/assets/BS AMBASSADORS/IMG_7349.JPG'
 import img7350 from '@/assets/BS AMBASSADORS/IMG_7350.JPG'
 import img7353 from '@/assets/BS AMBASSADORS/IMG_7353.JPG'
-import img7698_1 from '@/assets/BS AMBASSADORS/IMG_7698 (1).JPG'
-import img7699_2 from '@/assets/BS AMBASSADORS/IMG_7699 (2).JPG'
-import img7701 from '@/assets/BS AMBASSADORS/IMG_7701.JPG'
-import img7713 from '@/assets/BS AMBASSADORS/IMG_7713.JPG'
 import img7716_1 from '@/assets/BS AMBASSADORS/IMG_7716 (1).JPG'
+import img8322 from '@/assets/BS AMBASSADORS/IMG_8322.JPG.jpeg'
 import img8427 from '@/assets/BS AMBASSADORS/IMG_8427.JPG'
 import img8429 from '@/assets/BS AMBASSADORS/IMG_8429.JPG'
 import img8435 from '@/assets/BS AMBASSADORS/IMG_8435.JPG'
@@ -51,46 +43,38 @@ interface AmbassadorImage {
 }
 
 const ambassadorImages: AmbassadorImage[] = [
-  { id: 1, image: img0682, city: "Kentucky, USA" },
-  { id: 2, image: img0683, city: "Lexington, USA" },
-  { id: 3, image: img4439, city: "Louisville, USA" },
-  { id: 4, image: img4440, city: "Phoenix, Arizona" },
-  { id: 5, image: img4442, city: "Sydney, Australia" },
-  { id: 6, image: img4443, city: "Kigali, Rwanda" },
-  { id: 7, image: img4446, city: "Melbourne, Australia" },
-  { id: 8, image: img4449_2, city: "Kentucky, USA" },
-  { id: 9, image: img4455, city: "Lexington, USA" },
-  { id: 10, image: img4457, city: "Louisville, USA" },
-  { id: 11, image: img4459_1, city: "Phoenix, Arizona" },
-  { id: 12, image: img4464, city: "Sydney, Australia" },
-  { id: 13, image: img4466, city: "Kigali, Rwanda" },
-  { id: 14, image: img4575_1, city: "Melbourne, Australia" },
-  { id: 15, image: img4576, city: "Kentucky, USA" },
-  { id: 16, image: img4719, city: "Lexington, USA" },
-  { id: 17, image: img4721_1, city: "Louisville, USA" },
-  { id: 18, image: img6351, city: "Phoenix, Arizona" },
-  { id: 19, image: img7341, city: "Sydney, Australia" },
-  { id: 20, image: img7343, city: "Kigali, Rwanda" },
-  { id: 21, image: img7347, city: "Melbourne, Australia" },
-  { id: 22, image: img7349, city: "Kentucky, USA" },
-  { id: 23, image: img7350, city: "Lexington, USA" },
-  { id: 24, image: img7353, city: "Louisville, USA" },
-  { id: 25, image: img7698_1, city: "Phoenix, Arizona" },
-  { id: 26, image: img7699_2, city: "Sydney, Australia" },
-  { id: 27, image: img7701, city: "Kigali, Rwanda" },
-  { id: 28, image: img7713, city: "Melbourne, Australia" },
-  { id: 29, image: img7716_1, city: "Kentucky, USA" },
-  { id: 30, image: img8427, city: "Lexington, USA" },
-  { id: 31, image: img8429, city: "Louisville, USA" },
-  { id: 32, image: img8435, city: "Phoenix, Arizona" },
-  { id: 33, image: img8443, city: "Sydney, Australia" },
-  { id: 34, image: img8446, city: "Kigali, Rwanda" },
-  { id: 35, image: img8447, city: "Melbourne, Australia" },
-  { id: 36, image: img8491, city: "Kentucky, USA" },
-  { id: 37, image: img8502, city: "Lexington, USA" },
-  { id: 38, image: img8535, city: "Louisville, USA" },
-  { id: 39, image: img8540_1, city: "Phoenix, Arizona" },
-  { id : 40, image: image011, city: "Sydney, Australia" },
+  { id: 1, image: img0316, city: "Kentucky, USA" },
+  { id: 2, image: img0334, city: "Lexington, USA" },
+  { id: 3, image: img0682, city: "Louisville, USA" },
+  { id: 4, image: img0683, city: "Phoenix, Arizona" },
+  { id: 5, image: img0915, city: "Sydney, Australia" },
+  { id: 6, image: img0918, city: "Kigali, Rwanda" },
+  { id: 7, image: img4439, city: "Melbourne, Australia" },
+  { id: 8, image: img4464, city: "Kentucky, USA" },
+  { id: 9, image: img4466, city: "Lexington, USA" },
+  { id: 10, image: img4575_1, city: "Louisville, USA" },
+  { id: 11, image: img4576, city: "Phoenix, Arizona" },
+  { id: 12, image: img4719, city: "Sydney, Australia" },
+  { id: 13, image: img4721_1, city: "Kigali, Rwanda" },
+  { id: 14, image: img6351, city: "Melbourne, Australia" },
+  { id: 15, image: img7328, city: "Kentucky, USA" },
+  { id: 16, image: img7341, city: "Lexington, USA" },
+  { id: 17, image: img7347, city: "Louisville, USA" },
+  { id: 18, image: img7349, city: "Phoenix, Arizona" },
+  { id: 19, image: img7350, city: "Sydney, Australia" },
+  { id: 20, image: img7353, city: "Kigali, Rwanda" },
+  { id: 21, image: img7716_1, city: "Melbourne, Australia" },
+  { id: 22, image: img8322, city: "Kentucky, USA" },
+  { id: 23, image: img8427, city: "Lexington, USA" },
+  { id: 24, image: img8429, city: "Louisville, USA" },
+  { id: 25, image: img8435, city: "Phoenix, Arizona" },
+  { id: 26, image: img8443, city: "Sydney, Australia" },
+  { id: 27, image: img8446, city: "Kigali, Rwanda" },
+  { id: 28, image: img8447, city: "Melbourne, Australia" },
+  { id: 29, image: img8491, city: "Kentucky, USA" },
+  { id: 30, image: img8502, city: "Lexington, USA" },
+  { id: 31, image: img8535, city: "Louisville, USA" },
+  { id: 32, image: img8540_1, city: "Phoenix, Arizona" },
 ]
 
 export default function Ambassadors3DCarousel() {
@@ -342,7 +326,7 @@ export default function Ambassadors3DCarousel() {
           {[
             { label: 'Countries', value: '3+' },
             { label: 'Cities', value: '7+' },
-            { label: 'Ambassadors', value: '39+' },
+            { label: 'Ambassadors', value: '32+' },
             { label: 'Communities', value: '100+' },
           ].map((stat) => (
             <motion.div
