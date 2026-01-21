@@ -10,7 +10,7 @@ import img0683 from '@/assets/BS AMBASSADORS/IMG_0683.JPG'
 import img0915 from '@/assets/BS AMBASSADORS/IMG_0915.JPG.jpeg'
 import img0918 from '@/assets/BS AMBASSADORS/IMG_0918.JPG.jpeg'
 import img4439 from '@/assets/BS AMBASSADORS/IMG_4439.JPG'
-import img4464 from '@/assets/BS AMBASSADORS/IMG_4464.JPG'
+// import img4464 from '@/assets/BS AMBASSADORS/IMG_4464.JPG'
 import img4466 from '@/assets/BS AMBASSADORS/IMG_4466.JPG'
 import img4575_1 from '@/assets/BS AMBASSADORS/IMG_4575 (1).JPG'
 import img4576 from '@/assets/BS AMBASSADORS/IMG_4576.JPG'
@@ -29,11 +29,11 @@ import img8427 from '@/assets/BS AMBASSADORS/IMG_8427.JPG'
 import img8429 from '@/assets/BS AMBASSADORS/IMG_8429.JPG'
 import img8435 from '@/assets/BS AMBASSADORS/IMG_8435.JPG'
 import img8443 from '@/assets/BS AMBASSADORS/IMG_8443.JPG'
-import img8446 from '@/assets/BS AMBASSADORS/IMG_8446.JPG'
+// import img8446 from '@/assets/BS AMBASSADORS/IMG_8446.JPG'
 import img8447 from '@/assets/BS AMBASSADORS/IMG_8447.JPG'
 import img8491 from '@/assets/BS AMBASSADORS/IMG_8491.JPG'
 import img8502 from '@/assets/BS AMBASSADORS/IMG_8502.JPG'
-import img8535 from '@/assets/BS AMBASSADORS/IMG_8535.JPG'
+// import img8535 from '@/assets/BS AMBASSADORS/IMG_8535.JPG'
 import img8540_1 from '@/assets/BS AMBASSADORS/IMG_8540 (1).JPG'
 
 interface AmbassadorImage {
@@ -50,7 +50,7 @@ const ambassadorImages: AmbassadorImage[] = [
   { id: 5, image: img0915, city: "Sydney, Australia" },
   { id: 6, image: img0918, city: "Kigali, Rwanda" },
   { id: 7, image: img4439, city: "Melbourne, Australia" },
-  { id: 8, image: img4464, city: "Kentucky, USA" },
+  // { id: 8, image: img4464, city: "Kentucky, USA" },
   { id: 9, image: img4466, city: "Lexington, USA" },
   { id: 10, image: img4575_1, city: "Louisville, USA" },
   { id: 11, image: img4576, city: "Phoenix, Arizona" },
@@ -69,11 +69,11 @@ const ambassadorImages: AmbassadorImage[] = [
   { id: 24, image: img8429, city: "Louisville, USA" },
   { id: 25, image: img8435, city: "Phoenix, Arizona" },
   { id: 26, image: img8443, city: "Sydney, Australia" },
-  { id: 27, image: img8446, city: "Kigali, Rwanda" },
+  // { id: 27, image: img8446, city: "Kigali, Rwanda" },
   { id: 28, image: img8447, city: "Melbourne, Australia" },
   { id: 29, image: img8491, city: "Kentucky, USA" },
   { id: 30, image: img8502, city: "Lexington, USA" },
-  { id: 31, image: img8535, city: "Louisville, USA" },
+  // { id: 31, image: img8535, city: "Louisville, USA" },
   { id: 32, image: img8540_1, city: "Phoenix, Arizona" },
 ]
 
