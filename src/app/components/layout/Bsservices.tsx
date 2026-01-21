@@ -70,7 +70,7 @@ export default function Projects (){
     </div>
     <div className={`${index % 2 === 0 ? 'order-1 md:order-2' : 'order-1 md:order-1'} overflow-hidden rounded-lg w-full h-full`}>
       <motion.img
-        src={typeof service.image === 'string' ? service.image : service.image.src}
+        src={service.image}
         alt={service.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}

@@ -1,6 +1,5 @@
 
 
-import { Metadata } from "next";
 import { motion } from "framer-motion"
 import Navbar from "./components/layout/Navbar";
 import Header from "./components/layout/Header";
@@ -13,10 +12,9 @@ import Contact from "./components/layout/Contact";
 import Footer from "./components/layout/Footer";
 import Subnavbar from "./components/layout/Subnavbar";
 
-const metadata: Metadata = {
-  title: "BS BRAND",
-  description: "The home page of BS BRAND & BEN STORES",
-};
+// Page metadata for SEO
+const pageTitle = "BS BRAND";
+const pageDescription = "The home page of BS BRAND & BEN STORES";
 
 export default function Home() {
   return (

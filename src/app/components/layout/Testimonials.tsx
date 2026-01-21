@@ -14,10 +14,10 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   >
     <div className="flex items-start gap-4 mb-4">
       <img
-        src={typeof testimonial.image === 'string' ? testimonial.image : testimonial.image.src}
+        src={testimonial.image}
         alt={`Profile picture of ${testimonial.name}`}
-        width={typeof testimonial.image === 'object' ? testimonial.image.width : 48}
-        height={typeof testimonial.image === 'object' ? testimonial.image.height : 48}
+        width={48}
+        height={48}
         className="w-12 h-12 rounded-full object-cover"
       />
       <div>

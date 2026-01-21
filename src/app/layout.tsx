@@ -1,19 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://bsbrandstore.com/"),
-  title: {
-    default: "BS BRAND",
-    template: "%s | BS BRAND",
-  },
+// Page metadata for SEO
+const siteConfig = {
+  title: "BS BRAND",
   description: "BEN STORES AND BS BRAND",
-  openGraph: {
-    title: "BS BRAND",
-    type: "website",
-    locale: "en_US",
-    siteName: "BSBRAND",
-  },
+  url: "https://bsbrandstore.com/",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

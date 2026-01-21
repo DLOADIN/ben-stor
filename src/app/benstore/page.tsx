@@ -1,6 +1,5 @@
 
 
-import { Metadata } from "next";
 import HeroSection from "@/app/components/layout/Bsheader";
 import StarryBackground from "@/app/components/effects/SnowEffect";
 import VideoHero from "@/app/components/layout/BsSection";
@@ -15,10 +14,9 @@ import IPhoneShowcase from "@/app/components/layout/Bsiphones"
 import Accessories from "@/app/components/layout/Bsaccessorries"
 import { motion } from "framer-motion"
 
-const metadata: Metadata = {
-  title: "BEN STORES",
-  description: "The home page of BS BRAND & BEN STORES",
-};
+// Page metadata for SEO
+const pageTitle = "BEN STORES";
+const pageDescription = "The home page of BS BRAND & BEN STORES";
 
 export default function Home() {
   return (

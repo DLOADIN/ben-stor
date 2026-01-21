@@ -70,7 +70,7 @@ export default function Apartments (){
     </div>
     <div className={`${index % 2 === 0 ? 'order-1 md:order-2' : 'order-1 md:order-1'} overflow-hidden rounded-lg w-full h-full`}>
       <motion.img
-        src={typeof apartment.image === 'string' ? apartment.image : apartment.image.src}
+        src={apartment.image}
         alt={apartment.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         initial={{ opacity: 0, scale: 0.95 }}
