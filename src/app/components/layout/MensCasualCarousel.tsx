@@ -119,7 +119,7 @@ export default function MensCasualCarousel() {
     const rotateY = -angle * 0.6
     const depth = (z + radius) / (radius * 2)
     const scale = 0.5 + depth * 0.5
-    const opacity = Math.abs(normalizedDiff) <= 3 ? (0.2 + depth * 0.8) : 0
+    const opacity = Math.abs(normalizedDiff) <= 3 ? 1 : 0
     
     return { x, z, rotateY, scale, opacity, zIndex: Math.round(depth * 100), isActive: normalizedDiff === 0 }
   }

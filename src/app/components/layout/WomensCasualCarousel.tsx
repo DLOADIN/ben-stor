@@ -155,7 +155,7 @@ export default function WomensCasualCarousel() {
     const rotateY = -angle * 0.6
     const depth = (z + radius) / (radius * 2)
     const scale = 0.5 + depth * 0.5
-    const opacity = Math.abs(normalizedDiff) <= 3 ? (0.2 + depth * 0.8) : 0
+    const opacity = Math.abs(normalizedDiff) <= 3 ? 1 : 0
     
     return { x, z, rotateY, scale, opacity, zIndex: Math.round(depth * 100), isActive: normalizedDiff === 0 }
   }
@@ -178,7 +178,7 @@ export default function WomensCasualCarousel() {
       viewport={{ once: true }}
     >
       {/* Clean light background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-100" />
+      <div className="absolute inset-0 " />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
