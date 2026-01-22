@@ -263,11 +263,13 @@ export default function VideoShowcase() {
             >
               <div className="relative aspect-[9/16] rounded-3xl overflow-hidden shadow-lg opacity-40">
                 <video
-                  src={filteredVideos[getAdjacentIndex(-1)]?.src}
                   className="w-full h-full object-cover"
                   muted
                   playsInline
-                />
+                  preload="metadata"
+                >
+                  <source src={filteredVideos[getAdjacentIndex(-1)]?.src} type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-black/40" />
               </div>
             </motion.div>
@@ -297,9 +299,10 @@ export default function VideoShowcase() {
                     >
                       <video
                         ref={videoRef}
-                        src={currentVideo?.src}
                         className="w-full h-full object-cover"
                         playsInline
+                        preload="auto"
+                        crossOrigin="anonymous"
                         onEnded={handleVideoEnded}
                         onLoadedData={() => {
                           if (videoRef.current) {
@@ -307,7 +310,11 @@ export default function VideoShowcase() {
                             videoRef.current.muted = isMuted
                           }
                         }}
-                      />
+                        onError={(e) => console.error('Video error:', e)}
+                      >
+                        <source src={currentVideo?.src} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </motion.div>
                   </AnimatePresence>
 
@@ -428,11 +435,13 @@ export default function VideoShowcase() {
             >
               <div className="relative aspect-[9/16] rounded-3xl overflow-hidden shadow-lg opacity-40">
                 <video
-                  src={filteredVideos[getAdjacentIndex(1)]?.src}
                   className="w-full h-full object-cover"
                   muted
                   playsInline
-                />
+                  preload="metadata"
+                >
+                  <source src={filteredVideos[getAdjacentIndex(1)]?.src} type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-black/40" />
               </div>
             </motion.div>
