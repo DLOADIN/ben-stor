@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Play, Pause, Home, MapPin, Sparkles, Volume2
 import { motion, AnimatePresence } from 'framer-motion'
 
 // Import videos from src/assets (Vite will handle bundling)
-// import apartmentVideo from '@/assets/videos/apartment-video.mp4'
+import apartmentVideo from '@/assets/videos/apartment-video.mp4'
 import tripVideo1 from '@/assets/videos/trip-video-1.mp4'
 import tripVideo2 from '@/assets/videos/trip-video-2.mp4'
 import tripVideo3 from '@/assets/videos/trip-video-3.mp4'
@@ -18,14 +18,14 @@ interface Video {
 }
 
 const bsVideos: Video[] = [
-  // {
-  //   id: '1',
-  //   title: 'BS Luxury Apartments',
-  //   description: 'Premium living in Kigali\'s finest locations',
-  //   category: 'apartments',
-  //   src: apartmentVideo,
-  //   features: ['Modern Amenities', '24/7 Security', 'Prime Location']
-  // },
+  {
+    id: '1',
+    title: 'BS Luxury Apartments',
+    description: 'Premium living in Kigali\'s finest locations',
+    category: 'apartments',
+    src: apartmentVideo,
+    features: ['Modern Amenities', '24/7 Security', 'Prime Location']
+  },
   {
     id: '2',
     title: 'BS Safari Adventures',
