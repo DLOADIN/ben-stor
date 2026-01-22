@@ -33,7 +33,7 @@ import img8443 from '@/assets/BS AMBASSADORS/IMG_8443.JPG'
 import img8447 from '@/assets/BS AMBASSADORS/IMG_8447.JPG'
 import img8491 from '@/assets/BS AMBASSADORS/IMG_8491.JPG'
 import img8502 from '@/assets/BS AMBASSADORS/IMG_8502.JPG'
-import img8535 from '@/assets/BS AMBASSADORS/IMG_9558.JPG'
+import img8535 from '@/assets/BS AMBASSADORS/IMG_9558.jpeg'
 import img8540_1 from '@/assets/BS AMBASSADORS/IMG_8540 (1).JPG'
 
 interface AmbassadorImage {
