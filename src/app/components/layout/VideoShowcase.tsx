@@ -1,17 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Play, Pause, Home, MapPin, Sparkles, Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import apartmentVideo from '/videos/apartment-video.mp4'
-import tripVideo1 from '/videos/trip-video-1.mp4'
-import tripVideo2 from '/videos/trip-video-2.mp4'
-import tripVideo3 from '/videos/trip-video-3.mp4'
 
-
-// Video paths from public folder (works reliably in production)
-// const apartmentVideo = '/videos/apartment-video.mp4'
-// const tripVideo1 = '/videos/trip-video-1.mp4'
-// const tripVideo2 = '/videos/trip-video-2.mp4'
-// const tripVideo3 = '/videos/trip-video-3.mp4'
+// Import videos from src/assets (Vite will handle bundling)
+import apartmentVideo from '@/assets/videos/apartment-video.mp4'
+import tripVideo1 from '@/assets/videos/trip-video-1.mp4'
+import tripVideo2 from '@/assets/videos/trip-video-2.mp4'
+import tripVideo3 from '@/assets/videos/trip-video-3.mp4'
 
 interface Video {
   id: string
