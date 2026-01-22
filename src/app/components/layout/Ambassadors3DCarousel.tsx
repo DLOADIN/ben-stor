@@ -33,7 +33,7 @@ import img8443 from '@/assets/BS AMBASSADORS/IMG_8443.JPG'
 import img8447 from '@/assets/BS AMBASSADORS/IMG_8447.JPG'
 import img8491 from '@/assets/BS AMBASSADORS/IMG_8491.JPG'
 import img8502 from '@/assets/BS AMBASSADORS/IMG_8502.JPG'
-// import img8535 from '@/assets/BS AMBASSADORS/IMG_8535.JPG'
+import img8535 from '@/assets/BS AMBASSADORS/IMG_9558.JPG'
 import img8540_1 from '@/assets/BS AMBASSADORS/IMG_8540 (1).JPG'
 
 interface AmbassadorImage {
@@ -73,7 +73,7 @@ const ambassadorImages: AmbassadorImage[] = [
   { id: 28, image: img8447, city: "Melbourne, Australia" },
   { id: 29, image: img8491, city: "Kentucky, USA" },
   { id: 30, image: img8502, city: "Lexington, USA" },
-  // { id: 31, image: img8535, city: "Louisville, USA" },
+  { id: 31, image: img8535, city: "Louisville, USA" },
   { id: 32, image: img8540_1, city: "Phoenix, Arizona" },
 ]
 
