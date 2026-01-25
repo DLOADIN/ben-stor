@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Play, Pause, Home, MapPin, Sparkles, Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Import videos from src/assets (Vite will handle bundling)
-import apartmentVideo from '@/assets/videos/apartment-video.mp4'
-import tripVideo1 from '@/assets/videos/trip-video-1.mp4'
-import tripVideo2 from '@/assets/videos/trip-video-2.mp4'
-import tripVideo3 from '@/assets/videos/trip-video-3.mp4'
+// Cloudinary video URLs - hosted on Cloudinary CDN for reliable playback
+const apartmentVideo = 'https://res.cloudinary.com/dyqfyqtjl/video/upload/v1769344237/apartment-video_hz3zxt.mp4'
+const tripVideo1 = 'https://res.cloudinary.com/dyqfyqtjl/video/upload/v1769344206/trip-video-1_q3oonw.mp4'
+const tripVideo2 = 'https://res.cloudinary.com/dyqfyqtjl/video/upload/v1769344188/trip-video-2_qsppkc.mp4'
+const tripVideo3 = 'https://res.cloudinary.com/dyqfyqtjl/video/upload/v1769344195/trip-video-3_qgj4zj.mp4'
 
 interface Video {
   id: string
