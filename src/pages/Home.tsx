@@ -7,6 +7,11 @@ import Products from "../app/components/layout/Products"
 import Ambassadors3DCarousel from "../app/components/layout/Ambassadors3DCarousel"
 import WomensCasualCarousel from "../app/components/layout/WomensCasualCarousel"
 import MensCasualCarousel from "../app/components/layout/MensCasualCarousel"
+import StreetWearCapsCarousel from "../app/components/layout/StreetWearCapsCarousel"
+import StreetWearShoesCarousel from "../app/components/layout/StreetWearShoesCarousel"
+import HandbagsCarousel from "../app/components/layout/HandbagsCarousel"
+import WomenShoesCarousel from "../app/components/layout/WomenShoesCarousel"
+import TripsCarousel from "../app/components/layout/TripsCarousel"
 import Location from "../app/components/layout/Location"
 import TestimonialsCarousel from "../app/components/layout/Testimonials"
 import CEOCard from "../app/components/layout/CeoCard"
@@ -59,6 +64,31 @@ export default function HomePage() {
         {/* Men's Casual Outfits 3D Carousel */}
         <section id="mens-casual">
           <MensCasualCarousel />
+        </section>
+
+        {/* Street Wear Caps 3D Carousel */}
+        <section id="streetwear-caps">
+          <StreetWearCapsCarousel />
+        </section>
+
+        {/* Street Wear Shoes 3D Carousel */}
+        <section id="streetwear-shoes">
+          <StreetWearShoesCarousel />
+        </section>
+
+        {/* Handbags 3D Carousel */}
+        <section id="handbags">
+          <HandbagsCarousel />
+        </section>
+
+        {/* Women Shoes 3D Carousel */}
+        <section id="women-shoes">
+          <WomenShoesCarousel />
+        </section>
+
+        {/* BS Trips 3D Carousel */}
+        <section id="trips">
+          <TripsCarousel />
         </section>
 
         <section className="min-h-screen">
