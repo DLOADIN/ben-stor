@@ -132,25 +132,25 @@ export const teamMembers: TeamMember[] = [
       }
     ]
   },
-  {
-    name: "BS WHITE POLO SHIRTS",
-    role: "Unisex",
-    image: image9,
-    variants: [
-      {
-        role: "Unisex",
-        image: image19
-      },
-      {
-        role: "Unisex",
-        image: image23
-      },
-      {
-        role: "Unisex",
-        image: image15
-      }
-    ]
-  },
+  // {
+  //   name: "BS WHITE POLO SHIRTS",
+  //   role: "Unisex",
+  //   image: image9,
+  //   variants: [
+  //     {
+  //       role: "Unisex",
+  //       image: image19
+  //     },
+  //     {
+  //       role: "Unisex",
+  //       image: image23
+  //     },
+  //     {
+  //       role: "Unisex",
+  //       image: image15
+  //     }
+  //   ]
+  // },
   {
     name: "BS OVERSIZED STREET SHIRTS",
     role: "Unisex",
