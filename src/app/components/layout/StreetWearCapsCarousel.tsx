@@ -14,6 +14,11 @@ const capImages: CapImage[] = [
   { id: 3, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/v1773240175/WhatsApp_Image_2026-02-19_at_12.20.55_ksx3jz.jpg", category: "Dad Hat" },
   { id: 4, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/v1773240175/WhatsApp_Image_2026-02-19_at_11.41.25_lkbwow.jpg", category: "Trucker Cap" },
   { id: 5, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/v1773240174/WhatsApp_Image_2026-02-19_at_11.40.41_i0i9eh.jpg", category: "Street Cap" },
+  { id: 6, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775898813/WhatsApp_Image_2026-04-01_at_11.54.02_orqv1o.jpg", category: "Snapback" },
+  { id: 7, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775898812/WhatsApp_Image_2026-04-01_at_11.54.04_zqjgl1.jpg", category: "Fitted Cap" },
+  { id: 8, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775898812/WhatsApp_Image_2026-04-01_at_11.54.01_lhpf3r.jpg", category: "Dad Hat" },
+  { id: 9, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775898811/WhatsApp_Image_2026-04-01_at_11.53.56_h4sr1s.jpg", category: "Trucker Cap" },
+  { id: 10, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775898811/WhatsApp_Image_2026-04-01_at_11.53.55_dr4q12.jpg", category: "Street Cap" },
 ]
 
 export default function StreetWearCapsCarousel() {
@@ -261,7 +266,7 @@ export default function StreetWearCapsCarousel() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16">
           {[
-            { label: 'Styles', value: '5+' },
+            { label: 'Styles', value: '10+' },
             { label: 'Categories', value: '5' },
             { label: 'Premium Quality', value: '100%' },
             { label: 'Customer Rating', value: '4.9★' },
