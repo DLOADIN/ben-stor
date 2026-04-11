@@ -85,6 +85,12 @@ const clothingImages: ClothingImage[] = [
   { id: 35, image: img8872, category: "Weekend Look" },
   { id: 36, image: img8878, category: "Elegant Wear" },
   { id: 37, image: img8899, category: "Casual Chic" },
+  { id: 38, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775900418/WhatsApp_Image_2026-04-01_at_11.53.54_us4bgu.jpg", category: "Elegant Wear" },
+  { id: 39, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775900417/WhatsApp_Image_2026-04-01_at_11.53.52_ojbnk0.jpg", category: "Street Style" },
+  { id: 40, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775900417/WhatsApp_Image_2026-04-01_at_11.53.51_h961vz.jpg", category: "Casual Chic" },
+  { id: 41, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775900417/WhatsApp_Image_2026-04-01_at_11.53.50_veq3or.jpg", category: "Smart Casual" },
+  { id: 42, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775900417/WhatsApp_Image_2026-04-01_at_11.53.47_jzdf4l.jpg", category: "Weekend Look" },
+  { id: 43, image: "https://res.cloudinary.com/dyqfyqtjl/image/upload/q_auto/f_auto/v1775900640/WhatsApp_Image_2026-04-01_at_11.54.05_unls8d.jpg", category: "Elegant Wear" },
 ]
 
 export default function WomensCasualCarousel() {
@@ -344,7 +350,7 @@ export default function WomensCasualCarousel() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16">
           {[
-            { label: 'Styles', value: '37+' },
+            { label: 'Styles', value: '43+' },
             { label: 'Categories', value: '5' },
             { label: 'Premium Quality', value: '100%' },
             { label: 'Customer Rating', value: '4.9★' },
