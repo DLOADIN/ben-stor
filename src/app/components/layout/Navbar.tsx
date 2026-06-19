@@ -10,6 +10,7 @@ export default function Navbar() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const links = [
+    { href: "https://iseta.rw/ben-stores-bs-brand", label: "Iseta", type: "navigate" },
     { href: "/benstore", label: "Ben-Stores", type: "navigate" },
     { href: "#home", label: "Home", type: "scroll" },
     { href: "#about", label: "About Us", type: "scroll" },

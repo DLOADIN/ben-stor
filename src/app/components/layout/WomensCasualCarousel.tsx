@@ -7,7 +7,7 @@ import img5323 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5323 (1).PNG'
 import img5324 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5324.PNG'
 import img5326 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5326.PNG'
 import img5327 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5327.PNG'
-import img5330_1 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5330 (1).PNG'
+// import img5330_1 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5330 (1).PNG'
 import img5330 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5330.PNG'
 import img5332 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5332.PNG'
 import img5333 from '@/assets/BS WOMEN CASUAL CLOTHES/IMG_5333.PNG'
@@ -52,7 +52,7 @@ const clothingImages: ClothingImage[] = [
   { id: 2, image: img5324, category: "Casual Chic" },
   { id: 3, image: img5326, category: "Street Style" },
   { id: 4, image: img5327, category: "Smart Casual" },
-  { id: 5, image: img5330_1, category: "Weekend Look" },
+  // { id: 5, image: img5330_1, category: "Weekend Look" },
   { id: 6, image: img5330, category: "Elegant Wear" },
   { id: 7, image: img5332, category: "Casual Chic" },
   { id: 8, image: img5333, category: "Street Style" },
