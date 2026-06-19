@@ -12,6 +12,7 @@ import StreetWearShoesCarousel from "../app/components/layout/StreetWearShoesCar
 import HandbagsCarousel from "../app/components/layout/HandbagsCarousel"
 import WomenShoesCarousel from "../app/components/layout/WomenShoesCarousel"
 import TripsCarousel from "../app/components/layout/TripsCarousel"
+import ApartmentsCarousel from "../app/components/layout/ApartmentsCarousel"
 import Location from "../app/components/layout/Location"
 import TestimonialsCarousel from "../app/components/layout/Testimonials"
 import CEOCard from "../app/components/layout/CeoCard"
@@ -89,6 +90,11 @@ export default function HomePage() {
         {/* BS Trips 3D Carousel */}
         <section id="trips">
           <TripsCarousel />
+        </section>
+
+        {/* BS Apartments Carousel */}
+        <section id="apartments">
+          <ApartmentsCarousel />
         </section>
 
         <section className="min-h-screen">
